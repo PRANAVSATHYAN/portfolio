@@ -8,7 +8,7 @@ const HeroSection = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           <div className="order-2 md:order-1">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6">
-              Turning Data into <span className="text-primary">Valuable Insights</span>
+              Hi I am <span className="text-primary">Pranav Sathyan</span> an aspiring Data Analyst
             </h1>
             <p className="text-lg mb-8 text-muted-foreground max-w-lg">
               I'm a data analyst passionate about using data to solve real-world problems. 
