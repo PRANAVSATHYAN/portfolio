@@ -28,7 +28,7 @@ const Navbar = () => {
     >
       <div className="container mx-auto px-6 flex justify-between items-center">
         <Link to="/" className="font-display text-xl font-bold text-primary">
-          <span className="text-data-blue">Data</span>Analyst
+          Pranav Sathyan
         </Link>
         
         {/* Mobile menu button */}
