@@ -1,6 +1,6 @@
 
 import { Button } from "@/components/ui/button";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 
 const HeroSection = () => {
   const [jobTitle, setJobTitle] = useState("");
@@ -10,33 +10,33 @@ const HeroSection = () => {
   
   const titles = ["Data Analyst", "Business Analyst", "Data Visualizer", "SQL Developer", "Python Programmer"];
   
-  useEffect(() => {
-    const handleTyping = () => {
-      const current = titles[currentIndex];
-      
-      if (!isDeleting && jobTitle.length < current.length) {
-        // Still typing
-        setJobTitle(current.substring(0, jobTitle.length + 1));
-        setTypingSpeed(100);
-      } else if (!isDeleting && jobTitle.length === current.length) {
-        // Finished typing, pause before deleting
-        setIsDeleting(true);
-        setTypingSpeed(1500);
-      } else if (isDeleting && jobTitle.length > 0) {
-        // Deleting
-        setJobTitle(current.substring(0, jobTitle.length - 1));
-        setTypingSpeed(50);
-      } else if (isDeleting && jobTitle.length === 0) {
-        // Finished deleting, move to next title
-        setIsDeleting(false);
-        setCurrentIndex((prevIndex) => (prevIndex + 1) % titles.length);
-        setTypingSpeed(500);
-      }
-    };
+  const handleTyping = useCallback(() => {
+    const current = titles[currentIndex];
     
+    if (!isDeleting && jobTitle.length < current.length) {
+      // Still typing
+      setJobTitle(current.substring(0, jobTitle.length + 1));
+      setTypingSpeed(100);
+    } else if (!isDeleting && jobTitle.length === current.length) {
+      // Finished typing, pause before deleting
+      setIsDeleting(true);
+      setTypingSpeed(1500);
+    } else if (isDeleting && jobTitle.length > 0) {
+      // Deleting
+      setJobTitle(current.substring(0, jobTitle.length - 1));
+      setTypingSpeed(50);
+    } else if (isDeleting && jobTitle.length === 0) {
+      // Finished deleting, move to next title
+      setIsDeleting(false);
+      setCurrentIndex((prevIndex) => (prevIndex + 1) % titles.length);
+      setTypingSpeed(500);
+    }
+  }, [jobTitle, currentIndex, isDeleting, titles]);
+  
+  useEffect(() => {
     const timer = setTimeout(handleTyping, typingSpeed);
     return () => clearTimeout(timer);
-  }, [jobTitle, currentIndex, isDeleting, typingSpeed, titles]);
+  }, [handleTyping, typingSpeed]);
 
   return (
     <section id="home" className="min-h-screen flex items-center pt-16 section-padding">
@@ -58,7 +58,7 @@ const HeroSection = () => {
               With expertise in Python, SQL, and visualization tools, I transform complex datasets into actionable insights.
             </p>
             <div className="flex flex-wrap gap-4">
-              <Button asChild size="lg" className="rounded-md">
+              <Button asChild size="lg" className="rounded-md" style={{backgroundColor: "#cc73f8"}}>
                 <a href="#portfolio">View My Work</a>
               </Button>
               <Button asChild variant="outline" size="lg" className="rounded-md">

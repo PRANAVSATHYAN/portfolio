@@ -44,7 +44,7 @@
   }
 
   body {
-    @apply bg-background text-foreground font-sans;
+    @apply bg-background text-foreground font-sans overflow-x-hidden;
   }
   
   .section-padding {
@@ -94,4 +94,19 @@
   overflow: hidden;
   white-space: nowrap;
   animation: typing 3.5s steps(40, end) forwards;
+}
+
+/* Custom Glow Effects */
+.purple-glow {
+  @apply hover:shadow-[0_0_15px_rgba(204,115,248,0.5)];
+}
+
+.card-hover-effect {
+  @apply transition-all duration-300 hover:shadow-lg hover:shadow-[#cc73f8]/20;
+}
+
+/* Enhance blur effects */
+.blur-blob {
+  filter: blur(70px);
+  @apply absolute rounded-full opacity-20 z-0;
 }

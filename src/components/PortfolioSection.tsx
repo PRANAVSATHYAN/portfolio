@@ -77,8 +77,19 @@ const PortfolioSection = () => {
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
 
   return (
-    <section id="portfolio" className="py-24 section-padding">
-      <div className="container mx-auto">
+    <section id="portfolio" className="py-24 section-padding relative">
+      <div className="absolute inset-0 overflow-hidden">
+        <div className="grid grid-cols-12 grid-rows-12 h-full w-full opacity-5">
+          {[...Array(144)].map((_, i) => (
+            <div key={i} className="border border-white/10"></div>
+          ))}
+        </div>
+        <div className="absolute top-1/4 right-1/4 w-96 h-96 bg-[#cc73f8] rounded-full filter blur-[128px] opacity-20"></div>
+        <div className="absolute bottom-1/3 left-1/4 w-64 h-64 bg-primary rounded-full filter blur-[100px] opacity-25"></div>
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-[#9b30e2] rounded-full filter blur-[150px] opacity-10"></div>
+      </div>
+      
+      <div className="container mx-auto relative z-10">
         <div className="mb-16 text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">Portfolio</h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
@@ -90,12 +101,15 @@ const PortfolioSection = () => {
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
           {projects.map((project) => (
-            <Card key={project.id} className="overflow-hidden hover:shadow-md transition-all">
+            <Card 
+              key={project.id} 
+              className="overflow-hidden transition-all duration-300 hover:shadow-lg hover:shadow-[#cc73f8]/20 group"
+            >
               <div className="h-48 overflow-hidden">
                 <img 
                   src={project.image} 
                   alt={project.title} 
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                 />
               </div>
               <CardHeader>

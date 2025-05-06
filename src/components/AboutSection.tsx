@@ -29,13 +29,14 @@ const AboutSection = () => {
   return (
     <section id="about" className="py-24 section-padding bg-secondary relative">
       <div className="absolute inset-0 overflow-hidden">
-        <div className="grid grid-cols-8 grid-rows-8 h-full w-full opacity-5">
-          {[...Array(64)].map((_, i) => (
+        <div className="grid grid-cols-12 grid-rows-12 h-full w-full opacity-5">
+          {[...Array(144)].map((_, i) => (
             <div key={i} className="border border-white/10"></div>
           ))}
         </div>
         <div className="absolute top-1/4 right-1/4 w-96 h-96 bg-[#cc73f8] rounded-full filter blur-[128px] opacity-20"></div>
         <div className="absolute bottom-1/3 left-1/4 w-64 h-64 bg-primary rounded-full filter blur-[100px] opacity-25"></div>
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-[#9b30e2] rounded-full filter blur-[150px] opacity-10"></div>
       </div>
       
       <div className="container mx-auto relative z-10">

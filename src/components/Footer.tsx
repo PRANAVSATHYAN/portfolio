@@ -6,14 +6,15 @@ const Footer = () => {
   const currentYear = new Date().getFullYear();
   
   return (
-    <footer className="bg-secondary py-8 relative">
+    <footer className="bg-background py-8 relative">
       <div className="absolute inset-0 overflow-hidden">
-        <div className="grid grid-cols-8 grid-rows-4 h-full w-full opacity-5">
-          {[...Array(32)].map((_, i) => (
+        <div className="grid grid-cols-12 grid-rows-8 h-full w-full opacity-5">
+          {[...Array(96)].map((_, i) => (
             <div key={i} className="border border-white/10"></div>
           ))}
         </div>
-        <div className="absolute bottom-1/2 left-1/2 w-64 h-64 bg-[#cc73f8] rounded-full filter blur-[100px] opacity-20"></div>
+        <div className="absolute -left-6 -top-6 w-72 h-72 bg-accent rounded-full filter blur-3xl opacity-40"></div>
+        <div className="absolute -right-6 -bottom-6 w-72 h-72 bg-data-blue rounded-full filter blur-3xl opacity-30"></div>
       </div>
       
       <div className="container mx-auto px-6 relative z-10">
