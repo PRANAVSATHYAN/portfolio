@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 const HeroSection = () => {
   const [jobTitle, setJobTitle] = useState("");
   const [currentIndex, setCurrentIndex] = useState(0);
-  const titles = ["Data Analyst", "Data Visualizer", "SQL Developer", "Python Programmer"];
+  const titles = ["Data Analyst", "Business Analyst" "Data Visualizer", "SQL Developer", "Python Programmer"];
   
   useEffect(() => {
     const interval = setInterval(() => {
@@ -45,7 +45,7 @@ const HeroSection = () => {
             </div>
             <p className="text-xl mb-6 text-muted-foreground">An Aspiring Data Analyst</p>
             <p className="text-lg mb-8 text-muted-foreground max-w-lg">
-              I'm a data analyst passionate about using data to solve real-world problems. 
+              I'm a business analyst and an aspiring data engineer passionate about using data to solve real-world problems. 
               With expertise in Python, SQL, and visualization tools, I transform complex datasets into actionable insights.
             </p>
             <div className="flex flex-wrap gap-4">
