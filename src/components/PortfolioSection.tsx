@@ -90,7 +90,7 @@ const PortfolioSection = () => {
       </div>
       
       <div className="container mx-auto relative z-10">
-        <div className="mb-16 text-center">
+        <div className="mb-16 text-center animate-on-scroll">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">Portfolio</h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
             Explore some of my recent data analysis projects showcasing visualization, 
@@ -103,7 +103,7 @@ const PortfolioSection = () => {
           {projects.map((project) => (
             <Card 
               key={project.id} 
-              className="overflow-hidden transition-all duration-300 hover:shadow-lg hover:shadow-[#cc73f8]/20 group"
+              className="overflow-hidden transition-all duration-300 hover:shadow-xl hover:shadow-[#cc73f8]/30 group animate-on-scroll"
             >
               <div className="h-48 overflow-hidden">
                 <img 

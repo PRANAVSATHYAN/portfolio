@@ -56,11 +56,11 @@
   }
 
   .animate-on-scroll {
-    @apply opacity-0;
+    @apply opacity-0 translate-y-10 transition-all duration-700 ease-out;
   }
   
   .animate-on-scroll.animated {
-    @apply animate-fade-in;
+    @apply opacity-100 translate-y-0;
   }
 }
 
@@ -102,7 +102,7 @@
 }
 
 .card-hover-effect {
-  @apply transition-all duration-300 hover:shadow-lg hover:shadow-[#cc73f8]/20;
+  @apply transition-all duration-300 hover:shadow-lg hover:shadow-[#cc73f8]/30;
 }
 
 /* Enhance blur effects */

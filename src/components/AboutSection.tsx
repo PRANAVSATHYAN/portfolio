@@ -40,13 +40,13 @@ const AboutSection = () => {
       </div>
       
       <div className="container mx-auto relative z-10">
-        <div className="mb-16 text-center">
+        <div className="mb-16 text-center animate-on-scroll">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">About Me</h2>
           <div className="w-24 h-1 bg-primary mx-auto"></div>
         </div>
         
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-          <div>
+          <div className="animate-on-scroll">
             <h3 className="text-2xl font-bold mb-4">My Background</h3>
             <p className="mb-4 text-muted-foreground">
               As a data analyst with 3+ years of experience, I specialize in transforming raw data into meaningful business insights. 
@@ -64,11 +64,11 @@ const AboutSection = () => {
             </p>
           </div>
           
-          <div className="space-y-6">
+          <div className="space-y-6 animate-on-scroll">
             <h3 className="text-2xl font-bold mb-6">Skills & Tools</h3>
             
             {skills.map((skill, index) => (
-              <Card key={index} className="overflow-hidden hover:shadow-md transition-shadow backdrop-blur-sm bg-background/40">
+              <Card key={index} className="overflow-hidden transition-all duration-300 hover:shadow-lg hover:shadow-[#cc73f8]/40 backdrop-blur-sm bg-background/40">
                 <CardContent className="p-6">
                   <div className="flex items-start space-x-4">
                     <div className="mt-1">

@@ -41,7 +41,7 @@ const HeroSection = () => {
   return (
     <section id="home" className="min-h-screen flex items-center pt-16 section-padding">
       <div className="container mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center animate-on-scroll">
           <div className="order-2 md:order-1">
             <p className="text-lg mb-2 text-muted-foreground">Hi, Hope you are doing well...</p>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-2">
