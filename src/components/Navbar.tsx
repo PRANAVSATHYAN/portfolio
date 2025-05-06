@@ -23,11 +23,16 @@ const Navbar = () => {
   return (
     <nav 
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? 'bg-white shadow-md py-2' : 'bg-transparent py-4'
+        isScrolled 
+          ? 'bg-background/80 backdrop-blur-sm shadow-md py-3 mx-6 md:mx-12 lg:mx-24 mt-2 rounded-full' 
+          : 'bg-transparent py-4'
       }`}
     >
       <div className="container mx-auto px-6 flex justify-between items-center">
-        <Link to="/" className="font-display text-xl font-bold text-primary">
+        <Link to="/" className="font-display text-xl font-bold text-primary flex items-center gap-2">
+          <div className="w-8 h-8 bg-primary rounded-md flex items-center justify-center">
+            <div className="w-4 h-4 bg-background rounded-sm"></div>
+          </div>
           Pranav Sathyan
         </Link>
         
@@ -52,9 +57,7 @@ const Navbar = () => {
             <li key={item}>
               <a 
                 href={`#${item.toLowerCase()}`}
-                className={`transition-colors duration-300 hover:text-primary ${
-                  isScrolled ? 'text-foreground' : 'text-foreground'
-                }`}
+                className="transition-colors duration-300 hover:text-primary text-foreground font-medium"
               >
                 {item}
               </a>
@@ -65,7 +68,7 @@ const Navbar = () => {
       
       {/* Mobile menu */}
       {isMobileMenuOpen && (
-        <div className="md:hidden bg-white shadow-md">
+        <div className="md:hidden bg-background/95 backdrop-blur-sm shadow-md rounded-lg mt-2 mx-6">
           <ul className="pt-2 pb-4">
             {['Home', 'About', 'Portfolio', 'Resume', 'Contact'].map((item) => (
               <li key={item} className="block px-6 py-2">

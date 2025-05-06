@@ -1,33 +1,42 @@
+
 import { Button } from "@/components/ui/button";
 import { useState, useEffect } from "react";
 
 const HeroSection = () => {
   const [jobTitle, setJobTitle] = useState("");
   const [currentIndex, setCurrentIndex] = useState(0);
-  const titles = ["Data Analyst", "Business Analyst" "Data Visualizer", "SQL Developer", "Python Programmer"];
+  const [isDeleting, setIsDeleting] = useState(false);
+  const [typingSpeed, setTypingSpeed] = useState(100);
+  
+  const titles = ["Data Analyst", "Business Analyst", "Data Visualizer", "SQL Developer", "Python Programmer"];
   
   useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentIndex((prevIndex) => (prevIndex + 1) % titles.length);
-    }, 3000);
-    
-    return () => clearInterval(interval);
-  }, []);
-  
-  useEffect(() => {
-    const typingTimeout = setTimeout(() => {
-      if (jobTitle.length < titles[currentIndex].length) {
-        setJobTitle(titles[currentIndex].substring(0, jobTitle.length + 1));
-      } else {
-        // Keep the full text for a while before resetting
-        setTimeout(() => {
-          setJobTitle("");
-        }, 1000);
+    const handleTyping = () => {
+      const current = titles[currentIndex];
+      
+      if (!isDeleting && jobTitle.length < current.length) {
+        // Still typing
+        setJobTitle(current.substring(0, jobTitle.length + 1));
+        setTypingSpeed(100);
+      } else if (!isDeleting && jobTitle.length === current.length) {
+        // Finished typing, pause before deleting
+        setIsDeleting(true);
+        setTypingSpeed(1500);
+      } else if (isDeleting && jobTitle.length > 0) {
+        // Deleting
+        setJobTitle(current.substring(0, jobTitle.length - 1));
+        setTypingSpeed(50);
+      } else if (isDeleting && jobTitle.length === 0) {
+        // Finished deleting, move to next title
+        setIsDeleting(false);
+        setCurrentIndex((prevIndex) => (prevIndex + 1) % titles.length);
+        setTypingSpeed(500);
       }
-    }, 100);
+    };
     
-    return () => clearTimeout(typingTimeout);
-  }, [jobTitle, currentIndex]);
+    const timer = setTimeout(handleTyping, typingSpeed);
+    return () => clearTimeout(timer);
+  }, [jobTitle, currentIndex, isDeleting, typingSpeed, titles]);
 
   return (
     <section id="home" className="min-h-screen flex items-center pt-16 section-padding">
@@ -39,7 +48,7 @@ const HeroSection = () => {
               I am <span className="text-primary">Pranav Sathyan</span>
             </h1>
             <div className="h-14 mb-2">
-              <h2 className="text-2xl md:text-3xl text-primary-foreground font-semibold animate-pulse">
+              <h2 className="text-2xl md:text-3xl text-primary-foreground font-semibold">
                 {jobTitle}<span className="animate-pulse">|</span>
               </h2>
             </div>
