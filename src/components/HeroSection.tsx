@@ -38,26 +38,36 @@ const HeroSection = () => {
     return () => clearTimeout(timer);
   }, [handleTyping, typingSpeed]);
 
+  // Add useEffect for animation
+  useEffect(() => {
+    const elements = document.querySelectorAll('.fly-up');
+    
+    elements.forEach((el, index) => {
+      const element = el as HTMLElement;
+      element.style.animationDelay = `${index * 0.15}s`;
+    });
+  }, []);
+
   return (
     <section id="home" className="min-h-screen flex items-center pt-16 section-padding">
       <div className="container mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center animate-on-scroll">
           <div className="order-2 md:order-1">
-            <p className="text-lg mb-2 text-muted-foreground">Hi, Hope you are doing well...</p>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-2">
+            <p className="text-lg mb-2 text-muted-foreground fly-up">Hi, Hope you are doing well...</p>
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-2 fly-up">
               I am <span className="text-primary">Pranav Sathyan</span>
             </h1>
-            <div className="h-14 mb-2">
+            <div className="h-14 mb-2 fly-up">
               <h2 className="text-2xl md:text-3xl text-primary-foreground font-semibold">
                 {jobTitle}<span className="animate-pulse">|</span>
               </h2>
             </div>
-            <p className="text-xl mb-6 text-muted-foreground">An Aspiring Data Analyst</p>
-            <p className="text-lg mb-8 text-muted-foreground max-w-lg">
+            <p className="text-xl mb-6 text-muted-foreground fly-up">An Aspiring Data Analyst</p>
+            <p className="text-lg mb-8 text-muted-foreground max-w-lg fly-up">
               I'm a business analyst and an aspiring data engineer passionate about using data to solve real-world problems. 
               With expertise in Python, SQL, and visualization tools, I transform complex datasets into actionable insights.
             </p>
-            <div className="flex flex-wrap gap-4">
+            <div className="flex flex-wrap gap-4 fly-up">
               <Button asChild size="lg" className="rounded-md" style={{backgroundColor: "#cc73f8"}}>
                 <a href="#portfolio">View My Work</a>
               </Button>
@@ -66,7 +76,7 @@ const HeroSection = () => {
               </Button>
             </div>
           </div>
-          <div className="order-1 md:order-2 flex justify-center">
+          <div className="order-1 md:order-2 flex justify-center fly-up">
             <div className="relative">
               <div className="absolute -left-6 -top-6 w-72 h-72 bg-accent rounded-full filter blur-3xl opacity-40"></div>
               <div className="absolute -right-6 -bottom-6 w-72 h-72 bg-data-blue rounded-full filter blur-3xl opacity-30"></div>

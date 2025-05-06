@@ -56,7 +56,7 @@
   }
 
   .animate-on-scroll {
-    @apply opacity-0 translate-y-10 transition-all duration-700 ease-out;
+    @apply opacity-0 translate-y-16 transition-all duration-1000 ease-out;
   }
   
   .animate-on-scroll.animated {
@@ -110,3 +110,30 @@
   filter: blur(70px);
   @apply absolute rounded-full opacity-20 z-0;
 }
+
+/* Fly-up animation for sections */
+@keyframes flyUp {
+  0% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Staggered animation delays for children elements */
+.stagger-children > *:nth-child(1) { animation-delay: 0.1s; }
+.stagger-children > *:nth-child(2) { animation-delay: 0.2s; }
+.stagger-children > *:nth-child(3) { animation-delay: 0.3s; }
+.stagger-children > *:nth-child(4) { animation-delay: 0.4s; }
+.stagger-children > *:nth-child(5) { animation-delay: 0.5s; }
+.stagger-children > *:nth-child(6) { animation-delay: 0.6s; }
+
+/* Apply fly-up animation to all major components */
+.fly-up {
+  animation: flyUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  opacity: 0;
+}
+

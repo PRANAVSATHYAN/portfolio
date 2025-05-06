@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import {
   Card,
@@ -91,15 +90,15 @@ const PortfolioSection = () => {
       
       <div className="container mx-auto relative z-10">
         <div className="mb-16 text-center animate-on-scroll">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Portfolio</h2>
-          <p className="text-muted-foreground max-w-2xl mx-auto">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 fly-up">Portfolio</h2>
+          <p className="text-muted-foreground max-w-2xl mx-auto fly-up">
             Explore some of my recent data analysis projects showcasing visualization, 
             insights, and problem-solving across different industries.
           </p>
-          <div className="w-24 h-1 bg-primary mx-auto mt-4"></div>
+          <div className="w-24 h-1 bg-primary mx-auto mt-4 fly-up"></div>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 stagger-children">
           {projects.map((project) => (
             <Card 
               key={project.id} 

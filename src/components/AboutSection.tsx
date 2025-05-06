@@ -1,5 +1,6 @@
 
 import { Card, CardContent } from "@/components/ui/card";
+import { useEffect } from "react";
 
 const AboutSection = () => {
   const skills = [
@@ -41,34 +42,34 @@ const AboutSection = () => {
       
       <div className="container mx-auto relative z-10">
         <div className="mb-16 text-center animate-on-scroll">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">About Me</h2>
-          <div className="w-24 h-1 bg-primary mx-auto"></div>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 fly-up">About Me</h2>
+          <div className="w-24 h-1 bg-primary mx-auto fly-up"></div>
         </div>
         
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           <div className="animate-on-scroll">
-            <h3 className="text-2xl font-bold mb-4">My Background</h3>
-            <p className="mb-4 text-muted-foreground">
+            <h3 className="text-2xl font-bold mb-4 fly-up">My Background</h3>
+            <p className="mb-4 text-muted-foreground fly-up">
               As a data analyst with 3+ years of experience, I specialize in transforming raw data into meaningful business insights. 
               My journey in data analysis began with a degree in Statistics, and I've since expanded my expertise across various industries.
             </p>
-            <p className="mb-6 text-muted-foreground">
+            <p className="mb-6 text-muted-foreground fly-up">
               I'm passionate about using data to tell stories and drive decision-making. Whether it's optimizing business processes, 
               identifying market trends, or solving complex problems, I approach each project with curiosity and analytical rigor.
             </p>
-            <h3 className="text-2xl font-bold mb-4">My Interests</h3>
-            <p className="text-muted-foreground">
+            <h3 className="text-2xl font-bold mb-4 fly-up">My Interests</h3>
+            <p className="text-muted-foreground fly-up">
               Beyond working with data, I enjoy exploring new visualization techniques, contributing to open-source data projects, 
               and staying current with emerging technologies in data science. I believe in the power of data to transform organizations 
               and create positive change in the world.
             </p>
           </div>
           
-          <div className="space-y-6 animate-on-scroll">
-            <h3 className="text-2xl font-bold mb-6">Skills & Tools</h3>
+          <div className="space-y-6 animate-on-scroll stagger-children">
+            <h3 className="text-2xl font-bold mb-6 fly-up">Skills & Tools</h3>
             
             {skills.map((skill, index) => (
-              <Card key={index} className="overflow-hidden transition-all duration-300 hover:shadow-lg hover:shadow-[#cc73f8]/40 backdrop-blur-sm bg-background/40">
+              <Card key={index} className="overflow-hidden transition-all duration-300 hover:shadow-lg hover:shadow-[#cc73f8]/40 backdrop-blur-sm bg-background/40 fly-up">
                 <CardContent className="p-6">
                   <div className="flex items-start space-x-4">
                     <div className="mt-1">
