@@ -80,15 +80,25 @@ const ResumeSection = () => {
   ];
 
   return (
-    <section id="resume" className="py-24 section-padding bg-secondary">
-      <div className="container mx-auto">
+    <section id="resume" className="py-24 section-padding bg-secondary relative">
+      <div className="absolute inset-0 overflow-hidden">
+        <div className="grid grid-cols-8 grid-rows-8 h-full w-full opacity-5">
+          {[...Array(64)].map((_, i) => (
+            <div key={i} className="border border-white/10"></div>
+          ))}
+        </div>
+        <div className="absolute top-1/3 left-1/4 w-96 h-96 bg-[#cc73f8] rounded-full filter blur-[128px] opacity-20"></div>
+        <div className="absolute bottom-1/4 right-1/3 w-64 h-64 bg-primary rounded-full filter blur-[100px] opacity-25"></div>
+      </div>
+      
+      <div className="container mx-auto relative z-10">
         <div className="mb-16 text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">Resume</h2>
           <div className="w-24 h-1 bg-primary mx-auto"></div>
         </div>
         
         <div className="flex justify-center mb-12">
-          <Button asChild size="lg" className="rounded-md">
+          <Button asChild size="lg" className="rounded-md" style={{backgroundColor: "#cc73f8"}}>
             <a href="/resume.pdf" download>
               <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="mr-2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" x2="12" y1="15" y2="3"/></svg>
               Download Resume
@@ -105,7 +115,7 @@ const ResumeSection = () => {
           
           <TabsContent value="experience" className="mt-6 space-y-8">
             {experience.map((job, index) => (
-              <Card key={index}>
+              <Card key={index} className="backdrop-blur-sm bg-background/40">
                 <CardHeader>
                   <div className="flex justify-between items-start">
                     <div>
@@ -128,7 +138,7 @@ const ResumeSection = () => {
           
           <TabsContent value="education" className="mt-6 space-y-8">
             {education.map((edu, index) => (
-              <Card key={index}>
+              <Card key={index} className="backdrop-blur-sm bg-background/40">
                 <CardHeader>
                   <div className="flex justify-between items-start">
                     <div>
@@ -147,7 +157,7 @@ const ResumeSection = () => {
           
           <TabsContent value="certifications" className="mt-6 space-y-4">
             {certifications.map((cert, index) => (
-              <Card key={index}>
+              <Card key={index} className="backdrop-blur-sm bg-background/40">
                 <CardHeader className="py-4">
                   <div className="flex justify-between items-center">
                     <div>

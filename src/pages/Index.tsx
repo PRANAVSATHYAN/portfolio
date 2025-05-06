@@ -40,8 +40,8 @@ const Index = () => {
       <Navbar />
       <HeroSection />
       <AboutSection />
-      <PortfolioSection />
       <ResumeSection />
+      <PortfolioSection />
       <ContactSection />
       <Footer />
     </div>

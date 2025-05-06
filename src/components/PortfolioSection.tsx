@@ -115,6 +115,7 @@ const PortfolioSection = () => {
                     <Button 
                       variant="outline" 
                       onClick={() => setSelectedProject(project)}
+                      className="hover:text-[#cc73f8] hover:border-[#cc73f8]"
                     >
                       View Details
                     </Button>
@@ -150,7 +151,7 @@ const PortfolioSection = () => {
                       </div>
                     </div>
                     <div className="flex justify-end">
-                      <Button asChild>
+                      <Button asChild style={{backgroundColor: "#cc73f8"}}>
                         <a href={selectedProject?.link} target="_blank" rel="noopener noreferrer">
                           View Full Project
                         </a>
@@ -158,7 +159,7 @@ const PortfolioSection = () => {
                     </div>
                   </DialogContent>
                 </Dialog>
-                <Button asChild variant="link">
+                <Button asChild variant="link" className="text-[#cc73f8]">
                   <a href={project.link} target="_blank" rel="noopener noreferrer">
                     View Project
                   </a>

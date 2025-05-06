@@ -73,3 +73,25 @@
 .cursor-blink {
   animation: blink 1s infinite;
 }
+
+/* Grid background */
+.grid-background {
+  @apply grid grid-cols-12 grid-rows-12 h-full w-full opacity-5;
+}
+
+.grid-background > div {
+  @apply border border-white/10;
+}
+
+/* Fix for typing animation to ensure it completes */
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+.typing-animation {
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+  animation: typing 3.5s steps(40, end) forwards;
+}

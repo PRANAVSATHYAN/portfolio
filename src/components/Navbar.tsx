@@ -24,15 +24,12 @@ const Navbar = () => {
     <nav 
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled 
-          ? 'bg-background/80 backdrop-blur-sm shadow-md py-3 mx-6 md:mx-12 lg:mx-24 mt-2 rounded-full' 
-          : 'bg-transparent py-4'
+          ? 'bg-background/60 backdrop-blur-md shadow-md py-3 mx-6 md:mx-12 lg:mx-24 mt-2 rounded-full' 
+          : 'bg-transparent py-4 mx-6 md:mx-12 lg:mx-24 mt-2 rounded-full'
       }`}
     >
       <div className="container mx-auto px-6 flex justify-between items-center">
-        <Link to="/" className="font-display text-xl font-bold text-primary flex items-center gap-2">
-          <div className="w-8 h-8 bg-primary rounded-md flex items-center justify-center">
-            <div className="w-4 h-4 bg-background rounded-sm"></div>
-          </div>
+        <Link to="/" className="font-display text-xl font-bold text-primary">
           Pranav Sathyan
         </Link>
         
@@ -53,7 +50,7 @@ const Navbar = () => {
         
         {/* Desktop menu */}
         <ul className="hidden md:flex space-x-8">
-          {['Home', 'About', 'Portfolio', 'Resume', 'Contact'].map((item) => (
+          {['Home', 'About', 'Resume', 'Portfolio', 'Contact'].map((item) => (
             <li key={item}>
               <a 
                 href={`#${item.toLowerCase()}`}
@@ -70,7 +67,7 @@ const Navbar = () => {
       {isMobileMenuOpen && (
         <div className="md:hidden bg-background/95 backdrop-blur-sm shadow-md rounded-lg mt-2 mx-6">
           <ul className="pt-2 pb-4">
-            {['Home', 'About', 'Portfolio', 'Resume', 'Contact'].map((item) => (
+            {['Home', 'About', 'Resume', 'Portfolio', 'Contact'].map((item) => (
               <li key={item} className="block px-6 py-2">
                 <a 
                   href={`#${item.toLowerCase()}`}

@@ -6,12 +6,21 @@ const Footer = () => {
   const currentYear = new Date().getFullYear();
   
   return (
-    <footer className="bg-secondary py-8">
-      <div className="container mx-auto px-6">
+    <footer className="bg-secondary py-8 relative">
+      <div className="absolute inset-0 overflow-hidden">
+        <div className="grid grid-cols-8 grid-rows-4 h-full w-full opacity-5">
+          {[...Array(32)].map((_, i) => (
+            <div key={i} className="border border-white/10"></div>
+          ))}
+        </div>
+        <div className="absolute bottom-1/2 left-1/2 w-64 h-64 bg-[#cc73f8] rounded-full filter blur-[100px] opacity-20"></div>
+      </div>
+      
+      <div className="container mx-auto px-6 relative z-10">
         <div className="flex flex-col md:flex-row justify-between items-center">
           <div className="mb-4 md:mb-0">
-            <Link to="/" className="font-display text-xl font-bold">
-              <span className="text-data-blue">Data</span>Analyst
+            <Link to="/" className="font-display text-xl font-bold text-primary">
+              Pranav Sathyan
             </Link>
             <p className="mt-2 text-sm text-muted-foreground">
               Data-driven insights that make a difference
@@ -31,9 +40,9 @@ const Footer = () => {
           </div>
         </div>
         
-        <div className="mt-8 pt-8 border-t border-muted text-center">
+        <div className="mt-8 pt-8 border-t border-muted/20 text-center">
           <p className="text-sm text-muted-foreground">
-            © {currentYear} DataAnalyst Portfolio. All rights reserved.
+            © {currentYear} Pranav Sathyan. All rights reserved.
           </p>
         </div>
       </div>

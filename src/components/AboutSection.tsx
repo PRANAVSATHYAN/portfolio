@@ -27,8 +27,18 @@ const AboutSection = () => {
   ];
   
   return (
-    <section id="about" className="py-24 section-padding bg-secondary">
-      <div className="container mx-auto">
+    <section id="about" className="py-24 section-padding bg-secondary relative">
+      <div className="absolute inset-0 overflow-hidden">
+        <div className="grid grid-cols-8 grid-rows-8 h-full w-full opacity-5">
+          {[...Array(64)].map((_, i) => (
+            <div key={i} className="border border-white/10"></div>
+          ))}
+        </div>
+        <div className="absolute top-1/4 right-1/4 w-96 h-96 bg-[#cc73f8] rounded-full filter blur-[128px] opacity-20"></div>
+        <div className="absolute bottom-1/3 left-1/4 w-64 h-64 bg-primary rounded-full filter blur-[100px] opacity-25"></div>
+      </div>
+      
+      <div className="container mx-auto relative z-10">
         <div className="mb-16 text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">About Me</h2>
           <div className="w-24 h-1 bg-primary mx-auto"></div>
@@ -57,7 +67,7 @@ const AboutSection = () => {
             <h3 className="text-2xl font-bold mb-6">Skills & Tools</h3>
             
             {skills.map((skill, index) => (
-              <Card key={index} className="overflow-hidden hover:shadow-md transition-shadow">
+              <Card key={index} className="overflow-hidden hover:shadow-md transition-shadow backdrop-blur-sm bg-background/40">
                 <CardContent className="p-6">
                   <div className="flex items-start space-x-4">
                     <div className="mt-1">
