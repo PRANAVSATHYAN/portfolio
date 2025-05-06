@@ -72,7 +72,7 @@ const HeroSection = () => {
               <div className="absolute -right-6 -bottom-6 w-72 h-72 bg-data-blue rounded-full filter blur-3xl opacity-30"></div>
               <div className="rounded-lg overflow-hidden border-8 border-background/20 shadow-xl relative z-10">
                 <img
-                  src="https://images.unsplash.com/photo-1649972904349-6e44c42644a7?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80"
+                  src="https://media.licdn.com/dms/image/v2/D5603AQGT3bmmiviHAQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1707862255006?e=1752105600&v=beta&t=y6nFyeICM3aIZHLcSl0j7riRr6_4mdYvBHpTZaKOboM"
                   alt="Profile"
                   className="w-[300px] h-[300px] object-cover"
                 />
