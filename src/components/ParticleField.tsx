@@ -33,8 +33,8 @@ const ParticleField = () => {
     // Initialize particles
     const initParticles = () => {
       const particleCount = Math.min(
-        100, 
-        Math.floor(window.innerWidth * window.innerHeight / 10000)
+        200, // Increased from 100 to 200
+        Math.floor(window.innerWidth * window.innerHeight / 5000) // Reduced divisor from 10000 to 5000 for more particles
       );
       particlesRef.current = [];
       
