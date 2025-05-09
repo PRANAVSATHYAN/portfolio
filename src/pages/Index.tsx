@@ -7,6 +7,7 @@ import ResumeSection from "@/components/ResumeSection";
 import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
 import LoadingScreen from "@/components/LoadingScreen";
+import ParticleField from "@/components/ParticleField";
 import { useEffect } from "react";
 
 const Index = () => {
@@ -38,6 +39,7 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <ParticleField />
       <LoadingScreen />
       <Navbar />
       <HeroSection />
