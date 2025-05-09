@@ -1,3 +1,4 @@
+
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
 
 @tailwind base;
@@ -40,9 +41,6 @@
   * {
     @apply border-border;
     scroll-behavior: smooth;
-  }
-
-  a, button, input, textarea, select, [role="button"] {
   }
 
   body {
@@ -139,26 +137,3 @@
   opacity: 0;
 }
 
-/* Custom cursor styles - removed the hiding of cursor */
-.custom-cursor {
-  @apply fixed pointer-events-none z-50;
-  mix-blend-mode: difference;
-}
-
-.cursor-dot {
-  @apply w-2 h-2 rounded-full bg-primary;
-  transition: transform 0.3s ease;
-}
-
-.cursor-outline {
-  @apply w-8 h-8 rounded-full border border-primary;
-  transition: transform 0.3s ease;
-}
-
-.hoverable:hover ~ .custom-cursor .cursor-dot {
-  transform: scale(2);
-}
-
-.hoverable:hover ~ .custom-cursor .cursor-outline {
-  transform: scale(1.5);
-}
