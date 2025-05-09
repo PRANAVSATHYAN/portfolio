@@ -1,3 +1,4 @@
+
 # Portfolio Website
 
 This repository contains the source code for my personal portfolio website.
@@ -26,3 +27,25 @@ npm install
 
 # Start the development server
 npm run dev
+```
+
+## Deployment
+
+This site is configured to deploy to GitHub Pages.
+
+### Manual Deployment
+
+To deploy manually:
+
+```bash
+# Build the project
+npm run build
+
+# Deploy to GitHub Pages
+npm run deploy
+```
+
+### Automated Deployment
+
+The site automatically deploys to GitHub Pages when you push to the main branch, thanks to GitHub Actions workflow.
+
