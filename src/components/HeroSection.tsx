@@ -49,8 +49,18 @@ const HeroSection = () => {
   }, []);
 
   return (
-    <section id="home" className="min-h-screen flex items-center pt-16 section-padding">
-      <div className="container mx-auto">
+    <section id="home" className="min-h-screen flex items-center pt-16 section-padding relative overflow-hidden">
+      {/* Background image layer */}
+      <div className="absolute right-0 top-0 h-full w-1/2 z-0 md:block hidden">
+        <div className="absolute inset-0 bg-gradient-to-r from-background via-background/90 to-transparent z-10"></div>
+        <img
+          src="/lovable-uploads/caed5794-4e8c-4d1c-9b27-e6de6f3fd422.png"
+          alt="Background Portrait"
+          className="h-full w-full object-cover object-center"
+        />
+      </div>
+
+      <div className="container mx-auto relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center animate-on-scroll">
           <div className="order-2 md:order-1">
             <p className="text-lg mb-2 text-muted-foreground fly-up">Hi, Hope you are doing well...</p>
@@ -76,7 +86,7 @@ const HeroSection = () => {
               </Button>
             </div>
           </div>
-          <div className="order-1 md:order-2 flex justify-center fly-up">
+          <div className="order-1 md:order-2 flex justify-center fly-up md:hidden">
             <div className="relative">
               <div className="absolute -left-6 -top-6 w-72 h-72 bg-accent rounded-full filter blur-3xl opacity-40"></div>
               <div className="absolute -right-6 -bottom-6 w-72 h-72 bg-data-blue rounded-full filter blur-3xl opacity-30"></div>
