@@ -49,4 +49,3 @@ npm run deploy
 
 The site automatically deploys to GitHub Pages when you push to the main branch, thanks to GitHub Actions workflow.
 
-
