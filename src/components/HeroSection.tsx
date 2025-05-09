@@ -50,11 +50,11 @@ const HeroSection = () => {
 
   return (
     <section id="home" className="min-h-screen flex items-center pt-16 section-padding relative overflow-hidden">
-      {/* Background image layer */}
-      <div className="absolute right-0 top-0 h-full w-1/2 z-0 md:block hidden">
+      {/* Background image layer - now visible on all screen sizes */}
+      <div className="absolute right-0 top-0 h-full w-1/2 z-0 hidden md:block">
         <div className="absolute inset-0 bg-gradient-to-r from-background via-background/90 to-transparent z-10"></div>
         <img
-          src="/lovable-uploads/caed5794-4e8c-4d1c-9b27-e6de6f3fd422.png"
+          src="/lovable-uploads/77586b8c-02ad-401a-bec3-5d0c5203a3ea.png"
           alt="Background Portrait"
           className="h-full w-full object-cover object-center"
         />

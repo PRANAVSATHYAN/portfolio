@@ -40,11 +40,9 @@
   * {
     @apply border-border;
     scroll-behavior: smooth;
-    cursor: none;
   }
 
   a, button, input, textarea, select, [role="button"] {
-    cursor: none !important;
   }
 
   body {
@@ -141,7 +139,7 @@
   opacity: 0;
 }
 
-/* Custom cursor styles */
+/* Custom cursor styles - removed the hiding of cursor */
 .custom-cursor {
   @apply fixed pointer-events-none z-50;
   mix-blend-mode: difference;
