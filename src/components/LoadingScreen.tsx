@@ -33,7 +33,7 @@ const LoadingScreen = () => {
         {/* Loading animation */}
         <div className="flex flex-col items-center relative z-10">
           <div className="w-16 h-16 border-4 border-[#cc73f8] border-t-transparent rounded-full animate-spin mb-4"></div>
-          <h2 className="text-2xl font-bold text-primary animate-pulse">Loading...</h2>
+          <h2 className="text-2xl font-bold text-primary animate-pulse">Hi there! I'm glad you're here</h2>
         </div>
       </div>
     </div>
