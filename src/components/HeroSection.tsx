@@ -82,7 +82,7 @@ const HeroSection = () => {
               <div className="absolute -right-6 -bottom-6 w-72 h-72 bg-data-blue rounded-full filter blur-3xl opacity-30"></div>
               <div className="rounded-lg overflow-hidden border-8 border-background/20 shadow-xl relative z-10">
                 <img
-                  src="https://i.imgur.com/UcmYLvc.jpeg"
+                  src="https://i.imgur.com/sRrQSG6.jpeg"
                   alt="Profile"
                   className="w-[300px] h-[300px] object-cover"
                 />
