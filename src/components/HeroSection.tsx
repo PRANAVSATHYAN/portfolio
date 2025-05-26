@@ -78,23 +78,23 @@ const HeroSection = () => {
               With expertise in Python, SQL, and visualization tools, I transform complex datasets into actionable insights.
             </p>
             <div className="flex flex-wrap gap-4 fly-up">
-              <Button asChild size="lg" className="rounded-md" style={{backgroundColor: "#cc73f8"}}>
+              <Button asChild size="lg" className="rounded-md transform transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-[#cc73f8]/40" style={{backgroundColor: "#cc73f8"}}>
                 <a href="https://github.com/PRANAVSATHYAN" target="_blank" rel="noopener noreferrer">View My Work</a>
               </Button>
-              <Button variant="outline" size="lg" className="rounded-md" onClick={scrollToContact}>
+              <Button variant="outline" size="lg" className="rounded-md transform transition-all duration-300 hover:scale-105 hover:shadow-lg hover:bg-accent/50" onClick={scrollToContact}>
                 Get In Touch
               </Button>
             </div>
           </div>
           <div className="order-1 md:order-2 flex justify-center fly-up">
-            <div className="relative">
-              <div className="absolute -left-6 -top-6 w-72 h-72 bg-accent rounded-full filter blur-3xl opacity-40"></div>
-              <div className="absolute -right-6 -bottom-6 w-72 h-72 bg-data-blue rounded-full filter blur-3xl opacity-30"></div>
-              <div className="rounded-lg overflow-hidden border-8 border-background/20 shadow-xl relative z-10">
+            <div className="relative group">
+              <div className="absolute -left-6 -top-6 w-72 h-72 bg-accent rounded-full filter blur-3xl opacity-40 group-hover:opacity-60 transition-opacity duration-500"></div>
+              <div className="absolute -right-6 -bottom-6 w-72 h-72 bg-data-blue rounded-full filter blur-3xl opacity-30 group-hover:opacity-50 transition-opacity duration-500"></div>
+              <div className="rounded-lg overflow-hidden border-8 border-background/20 shadow-xl relative z-10 transform transition-all duration-500 group-hover:scale-105 group-hover:rotate-1">
                 <img
                   src="https://i.imgur.com/sRrQSG6.jpeg"
                   alt="Profile"
-                  className="w-[300px] h-[300px] object-cover"
+                  className="w-[300px] h-[300px] object-cover transition-all duration-500 group-hover:brightness-110"
                 />
               </div>
             </div>

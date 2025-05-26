@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 import {
   Card,
@@ -76,49 +77,49 @@ const PortfolioSection = () => {
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
 
   return (
-    <section id="portfolio" className="py-24 section-padding relative">
+    <section id="portfolio" className="py-24 section-padding relative overflow-hidden">
       <div className="absolute inset-0 overflow-hidden">
         <div className="grid grid-cols-12 grid-rows-12 h-full w-full opacity-5">
           {[...Array(144)].map((_, i) => (
             <div key={i} className="border border-white/10"></div>
           ))}
         </div>
-        <div className="absolute top-1/4 right-1/4 w-96 h-96 bg-[#cc73f8] rounded-full filter blur-[128px] opacity-20"></div>
-        <div className="absolute bottom-1/3 left-1/4 w-64 h-64 bg-primary rounded-full filter blur-[100px] opacity-25"></div>
+        <div className="absolute top-1/4 right-1/4 w-96 h-96 bg-[#cc73f8] rounded-full filter blur-[128px] opacity-20 animate-pulse"></div>
+        <div className="absolute bottom-1/3 left-1/4 w-64 h-64 bg-primary rounded-full filter blur-[100px] opacity-25 animate-pulse"></div>
         <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-[#9b30e2] rounded-full filter blur-[150px] opacity-10"></div>
       </div>
       
       <div className="container mx-auto relative z-10">
         <div className="mb-16 text-center animate-on-scroll">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 fly-up">Portfolio</h2>
-          <p className="text-muted-foreground max-w-2xl mx-auto fly-up">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 fly-up transform transition-all duration-500 hover:text-primary">Portfolio</h2>
+          <p className="text-muted-foreground max-w-2xl mx-auto fly-up transform transition-all duration-300 hover:text-foreground">
             Explore some of my recent data analysis projects showcasing visualization, 
             insights, and problem-solving across different industries.
           </p>
-          <div className="w-24 h-1 bg-primary mx-auto mt-4 fly-up"></div>
+          <div className="w-24 h-1 bg-primary mx-auto mt-4 fly-up transform transition-all duration-500 hover:w-32"></div>
         </div>
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 stagger-children">
           {projects.map((project) => (
             <Card 
               key={project.id} 
-              className="overflow-hidden transition-all duration-300 hover:shadow-xl hover:shadow-[#cc73f8]/30 group animate-on-scroll"
+              className="overflow-hidden transition-all duration-500 hover:shadow-2xl hover:shadow-[#cc73f8]/30 group animate-on-scroll transform hover:scale-[1.03] hover:-translate-y-2"
             >
               <div className="h-48 overflow-hidden">
                 <img 
                   src={project.image} 
                   alt={project.title} 
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-125 group-hover:rotate-2"
                 />
               </div>
               <CardHeader>
-                <CardTitle>{project.title}</CardTitle>
-                <CardDescription>{project.description}</CardDescription>
+                <CardTitle className="transition-colors duration-300 group-hover:text-primary">{project.title}</CardTitle>
+                <CardDescription className="transition-colors duration-300 group-hover:text-foreground">{project.description}</CardDescription>
               </CardHeader>
               <CardContent>
                 <div className="flex flex-wrap gap-2 mb-4">
                   {project.tools.map((tool, index) => (
-                    <Badge key={index} variant="secondary">{tool}</Badge>
+                    <Badge key={index} variant="secondary" className="transition-all duration-300 hover:bg-primary hover:text-primary-foreground hover:scale-110">{tool}</Badge>
                   ))}
                 </div>
               </CardContent>
@@ -128,7 +129,7 @@ const PortfolioSection = () => {
                     <Button 
                       variant="outline" 
                       onClick={() => setSelectedProject(project)}
-                      className="hover:text-[#cc73f8] hover:border-[#cc73f8]"
+                      className="hover:text-[#cc73f8] hover:border-[#cc73f8] transition-all duration-300 hover:scale-105"
                     >
                       View Details
                     </Button>
@@ -142,7 +143,7 @@ const PortfolioSection = () => {
                       <img 
                         src={selectedProject?.image} 
                         alt={selectedProject?.title} 
-                        className="w-full h-64 object-cover rounded-md mb-4" 
+                        className="w-full h-64 object-cover rounded-md mb-4 transition-transform duration-300 hover:scale-105" 
                       />
                       <div className="space-y-4">
                         <div>
@@ -157,14 +158,14 @@ const PortfolioSection = () => {
                           <h3 className="font-semibold text-lg mb-2">Tools Used:</h3>
                           <div className="flex flex-wrap gap-2">
                             {selectedProject?.tools.map((tool, index) => (
-                              <Badge key={index} variant="secondary">{tool}</Badge>
+                              <Badge key={index} variant="secondary" className="transition-all duration-300 hover:bg-primary hover:text-primary-foreground hover:scale-110">{tool}</Badge>
                             ))}
                           </div>
                         </div>
                       </div>
                     </div>
                     <div className="flex justify-end">
-                      <Button asChild style={{backgroundColor: "#cc73f8"}}>
+                      <Button asChild style={{backgroundColor: "#cc73f8"}} className="transition-all duration-300 hover:scale-105">
                         <a href={selectedProject?.link} target="_blank" rel="noopener noreferrer">
                           View Full Project
                         </a>
@@ -172,7 +173,7 @@ const PortfolioSection = () => {
                     </div>
                   </DialogContent>
                 </Dialog>
-                <Button asChild variant="link" className="text-[#cc73f8]">
+                <Button asChild variant="link" className="text-[#cc73f8] transition-all duration-300 hover:scale-105">
                   <a href={project.link} target="_blank" rel="noopener noreferrer">
                     View Project
                   </a>
