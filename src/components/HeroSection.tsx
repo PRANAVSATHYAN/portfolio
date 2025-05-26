@@ -79,7 +79,7 @@ const HeroSection = () => {
             </p>
             <div className="flex flex-wrap gap-4 fly-up">
               <Button asChild size="lg" className="rounded-md" style={{backgroundColor: "#cc73f8"}}>
-                <a href="#portfolio">View My Work</a>
+                <a href="https://github.com/PRANAVSATHYAN" target="_blank" rel="noopener noreferrer">View My Work</a>
               </Button>
               <Button variant="outline" size="lg" className="rounded-md" onClick={scrollToContact}>
                 Get In Touch
