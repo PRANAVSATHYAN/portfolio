@@ -48,6 +48,16 @@ const HeroSection = () => {
     });
   }, []);
 
+  const scrollToContact = () => {
+    const contactSection = document.getElementById('contact');
+    if (contactSection) {
+      contactSection.scrollIntoView({ 
+        behavior: 'smooth',
+        block: 'start'
+      });
+    }
+  };
+
   return (
     <section id="home" className="min-h-screen flex items-center pt-16 section-padding">
       <div className="container mx-auto">
@@ -71,8 +81,8 @@ const HeroSection = () => {
               <Button asChild size="lg" className="rounded-md" style={{backgroundColor: "#cc73f8"}}>
                 <a href="#portfolio">View My Work</a>
               </Button>
-              <Button asChild variant="outline" size="lg" className="rounded-md">
-                <a href="#contact">Get In Touch</a>
+              <Button variant="outline" size="lg" className="rounded-md" onClick={scrollToContact}>
+                Get In Touch
               </Button>
             </div>
           </div>
