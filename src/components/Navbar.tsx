@@ -20,6 +20,25 @@ const Navbar = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ 
+        behavior: 'smooth',
+        block: 'start'
+      });
+    }
+    setIsMobileMenuOpen(false);
+  };
+
+  const menuItems = [
+    { title: 'Home', id: 'home' },
+    { title: 'About', id: 'about' },
+    { title: 'Resume', id: 'resume' },
+    { title: 'Portfolio', id: 'portfolio' },
+    { title: 'Contact', id: 'contact' }
+  ];
+
   return (
     <nav 
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
@@ -50,14 +69,14 @@ const Navbar = () => {
         
         {/* Desktop menu */}
         <ul className="hidden md:flex space-x-8">
-          {['Home', 'About', 'Resume', 'Portfolio', 'Contact'].map((item) => (
-            <li key={item}>
-              <a 
-                href={`#${item.toLowerCase()}`}
-                className="transition-colors duration-300 hover:text-primary text-foreground font-medium"
+          {menuItems.map((item) => (
+            <li key={item.title}>
+              <button 
+                onClick={() => scrollToSection(item.id)}
+                className="transition-colors duration-300 hover:text-primary text-foreground font-medium cursor-pointer"
               >
-                {item}
-              </a>
+                {item.title}
+              </button>
             </li>
           ))}
         </ul>
@@ -67,15 +86,14 @@ const Navbar = () => {
       {isMobileMenuOpen && (
         <div className="md:hidden bg-background/95 backdrop-blur-sm shadow-md rounded-lg mt-2 mx-6">
           <ul className="pt-2 pb-4">
-            {['Home', 'About', 'Resume', 'Portfolio', 'Contact'].map((item) => (
-              <li key={item} className="block px-6 py-2">
-                <a 
-                  href={`#${item.toLowerCase()}`}
-                  className="block text-foreground hover:text-primary"
-                  onClick={() => setIsMobileMenuOpen(false)}
+            {menuItems.map((item) => (
+              <li key={item.title} className="block px-6 py-2">
+                <button 
+                  onClick={() => scrollToSection(item.id)}
+                  className="block text-foreground hover:text-primary w-full text-left"
                 >
-                  {item}
-                </a>
+                  {item.title}
+                </button>
               </li>
             ))}
           </ul>
