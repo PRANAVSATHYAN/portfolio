@@ -23,9 +23,13 @@ const Navbar = () => {
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
-      element.scrollIntoView({ 
-        behavior: 'smooth',
-        block: 'start'
+      const headerOffset = 80; // Account for fixed navbar
+      const elementPosition = element.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
       });
     }
     setIsMobileMenuOpen(false);
@@ -48,7 +52,7 @@ const Navbar = () => {
       }`}
     >
       <div className="container mx-auto px-6 flex justify-between items-center">
-        <Link to="/" className="font-display text-xl font-bold text-primary">
+        <Link to="/" className="font-display text-xl font-bold text-primary hover:scale-105 transition-transform duration-200">
           Pranav Sathyan
         </Link>
         
@@ -57,7 +61,7 @@ const Navbar = () => {
           <Button 
             variant="ghost" 
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="text-foreground"
+            className="text-foreground hover:text-primary transition-colors duration-200"
           >
             {isMobileMenuOpen ? (
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
@@ -73,9 +77,10 @@ const Navbar = () => {
             <li key={item.title}>
               <button 
                 onClick={() => scrollToSection(item.id)}
-                className="transition-colors duration-300 hover:text-primary text-foreground font-medium cursor-pointer"
+                className="transition-all duration-300 hover:text-primary text-foreground font-medium cursor-pointer hover:scale-105 relative group"
               >
                 {item.title}
+                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
               </button>
             </li>
           ))}
@@ -84,13 +89,13 @@ const Navbar = () => {
       
       {/* Mobile menu */}
       {isMobileMenuOpen && (
-        <div className="md:hidden bg-background/95 backdrop-blur-sm shadow-md rounded-lg mt-2 mx-6">
+        <div className="md:hidden bg-background/95 backdrop-blur-sm shadow-md rounded-lg mt-2 mx-6 animate-fade-in">
           <ul className="pt-2 pb-4">
             {menuItems.map((item) => (
               <li key={item.title} className="block px-6 py-2">
                 <button 
                   onClick={() => scrollToSection(item.id)}
-                  className="block text-foreground hover:text-primary w-full text-left"
+                  className="block text-foreground hover:text-primary w-full text-left transition-colors duration-200"
                 >
                   {item.title}
                 </button>

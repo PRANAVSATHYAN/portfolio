@@ -59,43 +59,50 @@ const HeroSection = () => {
   };
 
   return (
-    <section id="home" className="min-h-screen flex items-center pt-16 section-padding">
-      <div className="container mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center animate-on-scroll">
-          <div className="order-2 md:order-1">
-            <p className="text-lg mb-2 text-muted-foreground fly-up">Hi, Hope you are doing well...</p>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-2 fly-up">
-              I am <span className="text-primary">Pranav Sathyan</span>
-            </h1>
-            <div className="h-14 mb-2 fly-up">
-              <h2 className="text-2xl md:text-3xl text-primary-foreground font-semibold">
-                {jobTitle}<span className="animate-pulse">|</span>
-              </h2>
-            </div>
-            <p className="text-xl mb-6 text-muted-foreground fly-up">An Aspiring Data Analyst</p>
-            <p className="text-lg mb-8 text-muted-foreground max-w-lg fly-up">
-              I'm a business analyst and an aspiring data engineer passionate about using data to solve real-world problems. 
-              With expertise in Python, SQL, and visualization tools, I transform complex datasets into actionable insights.
-            </p>
-            <div className="flex flex-wrap gap-4 fly-up">
-              <Button asChild size="lg" className="rounded-md" style={{backgroundColor: "#cc73f8"}}>
-                <a href="https://github.com/PRANAVSATHYAN" target="_blank" rel="noopener noreferrer">View My Work</a>
-              </Button>
-              <Button variant="outline" size="lg" className="rounded-md" onClick={scrollToContact}>
-                Get In Touch
-              </Button>
-            </div>
+    <section id="home" className="min-h-screen flex items-center justify-center pt-16 section-padding relative overflow-hidden">
+      {/* Background elements */}
+      <div className="absolute inset-0">
+        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/20 rounded-full filter blur-[128px] opacity-30"></div>
+        <div className="absolute bottom-1/4 right-1/4 w-64 h-64 bg-accent/30 rounded-full filter blur-[100px] opacity-40"></div>
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-primary/10 rounded-full filter blur-[150px] opacity-20"></div>
+      </div>
+
+      <div className="container mx-auto relative z-10">
+        <div className="text-center max-w-4xl mx-auto animate-on-scroll">
+          <p className="text-lg mb-4 text-muted-foreground fly-up">Hi, Hope you are doing well...</p>
+          
+          <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight mb-6 fly-up">
+            I am <span className="text-primary bg-gradient-to-r from-primary to-primary/80 bg-clip-text text-transparent">Pranav Sathyan</span>
+          </h1>
+          
+          <div className="h-16 mb-6 fly-up">
+            <h2 className="text-3xl md:text-4xl text-foreground font-semibold">
+              {jobTitle}<span className="animate-pulse text-primary">|</span>
+            </h2>
           </div>
-          <div className="order-1 md:order-2 flex justify-center fly-up">
-            <div className="relative">
-              <div className="absolute -left-6 -top-6 w-72 h-72 bg-accent rounded-full filter blur-3xl opacity-40"></div>
-              <div className="absolute -right-6 -bottom-6 w-72 h-72 bg-data-blue rounded-full filter blur-3xl opacity-30"></div>
-              <div className="rounded-lg overflow-hidden border-8 border-background/20 shadow-xl relative z-10">
-                <img
-                  src="https://i.imgur.com/sRrQSG6.jpeg"
-                  alt="Profile"
-                  className="w-[300px] h-[300px] object-cover"
-                />
+          
+          <p className="text-2xl mb-6 text-primary font-medium fly-up">An Aspiring Data Analyst</p>
+          
+          <p className="text-xl mb-12 text-muted-foreground max-w-2xl mx-auto leading-relaxed fly-up">
+            I'm a business analyst and an aspiring data engineer passionate about using data to solve real-world problems. 
+            With expertise in Python, SQL, and visualization tools, I transform complex datasets into actionable insights.
+          </p>
+          
+          <div className="flex flex-col sm:flex-row gap-6 justify-center items-center fly-up">
+            <Button asChild size="lg" className="rounded-full px-8 py-6 text-lg font-semibold hover:scale-105 transition-all duration-300" style={{backgroundColor: "#cc73f8"}}>
+              <a href="https://github.com/PRANAVSATHYAN" target="_blank" rel="noopener noreferrer">View My Work</a>
+            </Button>
+            <Button variant="outline" size="lg" className="rounded-full px-8 py-6 text-lg font-semibold hover:scale-105 transition-all duration-300 border-primary text-primary hover:bg-primary hover:text-primary-foreground" onClick={scrollToContact}>
+              Get In Touch
+            </Button>
+          </div>
+
+          {/* Scroll indicator */}
+          <div className="mt-16 fly-up">
+            <div className="flex flex-col items-center">
+              <p className="text-sm text-muted-foreground mb-2">Scroll to explore</p>
+              <div className="w-6 h-10 border-2 border-muted-foreground rounded-full flex justify-center">
+                <div className="w-1 h-3 bg-muted-foreground rounded-full mt-2 animate-bounce"></div>
               </div>
             </div>
           </div>

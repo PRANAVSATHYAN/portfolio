@@ -28,7 +28,7 @@ const AboutSection = () => {
   ];
   
   return (
-    <section id="about" className="py-24 section-padding bg-secondary relative">
+    <section id="about" className="min-h-screen py-24 section-padding bg-secondary relative flex items-center">
       <div className="absolute inset-0 overflow-hidden">
         <div className="grid grid-cols-12 grid-rows-12 h-full w-full opacity-5">
           {[...Array(144)].map((_, i) => (
@@ -46,30 +46,56 @@ const AboutSection = () => {
           <div className="w-24 h-1 bg-primary mx-auto fly-up"></div>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-          <div className="animate-on-scroll">
-            <h3 className="text-2xl font-bold mb-4 fly-up">My Background</h3>
-            <p className="mb-4 text-muted-foreground fly-up">
-              As a data analyst with 3+ years of experience, I specialize in transforming raw data into meaningful business insights. 
-              My journey in data analysis began with a degree in Statistics, and I've since expanded my expertise across various industries.
-            </p>
-            <p className="mb-6 text-muted-foreground fly-up">
-              I'm passionate about using data to tell stories and drive decision-making. Whether it's optimizing business processes, 
-              identifying market trends, or solving complex problems, I approach each project with curiosity and analytical rigor.
-            </p>
-            <h3 className="text-2xl font-bold mb-4 fly-up">My Interests</h3>
-            <p className="text-muted-foreground fly-up">
-              Beyond working with data, I enjoy exploring new visualization techniques, contributing to open-source data projects, 
-              and staying current with emerging technologies in data science. I believe in the power of data to transform organizations 
-              and create positive change in the world.
-            </p>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+          {/* Photo Section */}
+          <div className="order-1 lg:order-1 flex justify-center animate-on-scroll">
+            <div className="relative fly-up">
+              <div className="absolute -left-6 -top-6 w-80 h-80 bg-accent rounded-full filter blur-3xl opacity-40"></div>
+              <div className="absolute -right-6 -bottom-6 w-80 h-80 bg-data-blue rounded-full filter blur-3xl opacity-30"></div>
+              <div className="rounded-2xl overflow-hidden border-8 border-background/20 shadow-2xl relative z-10 hover:scale-105 transition-transform duration-300">
+                <img
+                  src="https://i.imgur.com/sRrQSG6.jpeg"
+                  alt="Pranav Sathyan - Data Analyst"
+                  className="w-[350px] h-[350px] object-cover"
+                />
+              </div>
+              {/* Decorative elements */}
+              <div className="absolute -top-4 -right-4 w-8 h-8 bg-primary rounded-full animate-pulse"></div>
+              <div className="absolute -bottom-6 -left-6 w-6 h-6 bg-accent rounded-full animate-pulse" style={{animationDelay: '0.5s'}}></div>
+            </div>
           </div>
-          
-          <div className="space-y-6 animate-on-scroll stagger-children">
-            <h3 className="text-2xl font-bold mb-6 fly-up">Skills & Tools</h3>
-            
+
+          {/* Content Section */}
+          <div className="order-2 lg:order-2 animate-on-scroll space-y-8">
+            <div>
+              <h3 className="text-2xl font-bold mb-4 fly-up">My Background</h3>
+              <p className="mb-4 text-muted-foreground fly-up leading-relaxed">
+                As a data analyst with 3+ years of experience, I specialize in transforming raw data into meaningful business insights. 
+                My journey in data analysis began with a degree in Statistics, and I've since expanded my expertise across various industries.
+              </p>
+              <p className="mb-6 text-muted-foreground fly-up leading-relaxed">
+                I'm passionate about using data to tell stories and drive decision-making. Whether it's optimizing business processes, 
+                identifying market trends, or solving complex problems, I approach each project with curiosity and analytical rigor.
+              </p>
+            </div>
+
+            <div>
+              <h3 className="text-2xl font-bold mb-4 fly-up">My Interests</h3>
+              <p className="text-muted-foreground fly-up leading-relaxed">
+                Beyond working with data, I enjoy exploring new visualization techniques, contributing to open-source data projects, 
+                and staying current with emerging technologies in data science. I believe in the power of data to transform organizations 
+                and create positive change in the world.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        {/* Skills Section */}
+        <div className="mt-20">
+          <h3 className="text-2xl font-bold mb-8 text-center fly-up">Skills & Tools</h3>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 animate-on-scroll stagger-children">
             {skills.map((skill, index) => (
-              <Card key={index} className="overflow-hidden transition-all duration-300 hover:shadow-lg hover:shadow-[#cc73f8]/40 backdrop-blur-sm bg-background/40 fly-up">
+              <Card key={index} className="overflow-hidden transition-all duration-300 hover:shadow-lg hover:shadow-[#cc73f8]/40 backdrop-blur-sm bg-background/40 hover:scale-105 fly-up">
                 <CardContent className="p-6">
                   <div className="flex items-start space-x-4">
                     <div className="mt-1">
@@ -81,7 +107,7 @@ const AboutSection = () => {
                         {skill.items.map((item, i) => (
                           <span 
                             key={i} 
-                            className="bg-background text-foreground px-3 py-1 rounded-full text-sm"
+                            className="bg-background text-foreground px-3 py-1 rounded-full text-sm hover:bg-primary hover:text-primary-foreground transition-colors duration-200"
                           >
                             {item}
                           </span>

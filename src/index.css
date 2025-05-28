@@ -40,6 +40,9 @@
 
   * {
     @apply border-border;
+  }
+
+  html {
     scroll-behavior: smooth;
   }
 
@@ -61,6 +64,11 @@
   
   .animate-on-scroll.animated {
     @apply opacity-100 translate-y-0;
+  }
+
+  /* Ensure sections take full viewport height where appropriate */
+  section {
+    scroll-margin-top: 80px;
   }
 }
 
@@ -123,6 +131,22 @@
   }
 }
 
+/* Fade in animation */
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.3s ease-out;
+}
+
 /* Staggered animation delays for children elements */
 .stagger-children > *:nth-child(1) { animation-delay: 0.1s; }
 .stagger-children > *:nth-child(2) { animation-delay: 0.2s; }
@@ -137,3 +161,9 @@
   opacity: 0;
 }
 
+/* Smooth scrolling improvements */
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
