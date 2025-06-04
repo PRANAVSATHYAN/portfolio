@@ -81,7 +81,7 @@ const HeroSection = () => {
             </h2>
           </div>
           
-          <p className="text-xl mb-6 text-primary font-medium fly-up">An Aspiring Data Analyst</p>
+          <p className="text-xl mb-6 text-primary font-medium fly-up">An Aspiring Data Scientist & AI Engineer</p>
           
           <p className="text-lg mb-8 text-muted-foreground max-w-2xl mx-auto leading-relaxed fly-up">
             Experienced Business Analyst with expertise across multiple domains, including Supply Chain, Non-Profit Organization, finance. 
