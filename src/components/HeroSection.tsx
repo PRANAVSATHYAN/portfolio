@@ -1,4 +1,3 @@
-
 import { Button } from "@/components/ui/button";
 import { useState, useEffect, useCallback } from "react";
 
@@ -59,7 +58,7 @@ const HeroSection = () => {
   };
 
   return (
-    <section id="home" className="min-h-screen flex items-center justify-center pt-24 pb-8 section-padding relative overflow-hidden">
+    <section id="home" className="min-h-screen flex items-center justify-center pt-16 pb-8 section-padding relative overflow-hidden">
       {/* Background elements */}
       <div className="absolute inset-0">
         <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/20 rounded-full filter blur-[128px] opacity-30"></div>
@@ -68,27 +67,27 @@ const HeroSection = () => {
       </div>
 
       <div className="container mx-auto relative z-10">
-        <div className="text-center max-w-4xl mx-auto animate-on-scroll mt-8">
-          <p className="text-lg mb-6 text-muted-foreground fly-up">Hi, Hope you are doing well...</p>
+        <div className="text-center max-w-4xl mx-auto animate-on-scroll">
+          <p className="text-lg mb-4 text-muted-foreground fly-up">Hi, Hope you are doing well...</p>
           
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-8 fly-up">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6 fly-up">
             I am <span className="text-primary bg-gradient-to-r from-primary to-primary/80 bg-clip-text text-transparent">Pranav Sathyan</span>
           </h1>
           
-          <div className="h-14 mb-8 fly-up">
+          <div className="h-12 mb-6 fly-up">
             <h2 className="text-2xl md:text-3xl text-foreground font-semibold">
               {jobTitle}<span className="animate-pulse text-primary">|</span>
             </h2>
           </div>
           
-          <p className="text-xl mb-8 text-primary font-medium fly-up">An Aspiring Data Analyst</p>
+          <p className="text-xl mb-6 text-primary font-medium fly-up">An Aspiring Data Analyst</p>
           
-          <p className="text-lg mb-12 text-muted-foreground max-w-2xl mx-auto leading-relaxed fly-up">
+          <p className="text-lg mb-8 text-muted-foreground max-w-2xl mx-auto leading-relaxed fly-up">
             I'm a business analyst and an aspiring data engineer passionate about using data to solve real-world problems. 
             With expertise in Python, SQL, and visualization tools, I transform complex datasets into actionable insights.
           </p>
           
-          <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-16 fly-up">
+          <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-12 fly-up">
             <Button asChild size="lg" className="rounded-full px-8 py-6 text-lg font-semibold hover:scale-105 transition-all duration-300" style={{backgroundColor: "#cc73f8"}}>
               <a href="https://github.com/PRANAVSATHYAN" target="_blank" rel="noopener noreferrer">View My Work</a>
             </Button>
@@ -98,7 +97,7 @@ const HeroSection = () => {
           </div>
 
           {/* Enhanced scroll indicator with more noticeable bounce */}
-          <div className="mt-8 fly-up">
+          <div className="mt-6 fly-up">
             <div className="flex flex-col items-center">
               <p className="text-sm text-muted-foreground mb-3">Scroll to explore</p>
               <div className="w-6 h-10 border-2 border-muted-foreground rounded-full flex justify-center animate-bounce-slow">
