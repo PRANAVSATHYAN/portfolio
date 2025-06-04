@@ -92,8 +92,13 @@ const HeroSection = () => {
             <Button asChild size="lg" className="rounded-full px-8 py-6 text-lg font-semibold gradient-button-primary border-0 text-white">
               <a href="https://github.com/PRANAVSATHYAN" target="_blank" rel="noopener noreferrer">View My Work</a>
             </Button>
-            <Button asChild size="lg" className="rounded-full px-8 py-6 text-lg font-semibold gradient-button-primary border-0 text-white" onClick={scrollToContact}>
-              <span style={{ cursor: 'pointer' }} onClick={scrollToContact}>Get In Touch</span>
+            <Button 
+              size="lg" 
+              variant="ghost"
+              className="rounded-full px-8 py-6 text-lg font-semibold border-2 border-primary text-primary hover:bg-primary/10 transition-all duration-300" 
+              onClick={scrollToContact}
+            >
+              Get In Touch
             </Button>
           </div>
 

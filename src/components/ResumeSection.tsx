@@ -1,3 +1,4 @@
+
 import { Button } from "@/components/ui/button";
 import {
   Card,
@@ -11,69 +12,74 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 const ResumeSection = () => {
   const experience = [
     {
-      title: "Senior Data Analyst",
-      company: "TechCorp Solutions",
-      period: "2021 - Present",
+      title: "Business Analyst (Solutions Design and Delivery)",
+      company: "Uniting Church of NSWACT, Sydney",
+      period: "Nov 2022 - Present",
       description: [
-        "Led a team of 3 analysts working on complex data projects across multiple departments",
-        "Developed automated ETL pipelines saving 20+ hours of manual work weekly",
-        "Created executive dashboards used by C-level executives for strategic planning",
-        "Implemented A/B testing framework that improved conversion rates by 18%"
+        "Developed and governed Power BI solutions, including interactive dashboards, data models, and best practices.",
+        "Managed SQL databases while ensuring data quality, security (RLS), and BI asset distribution.",
+        "Streamlined processes and applications using Promapp, Visio, and PowerApps, and supported data migrations.",
+        "Led stakeholder engagement for requirements, testing, documentation, and user training."
       ]
     },
     {
-      title: "Data Analyst",
-      company: "FinData Inc.",
-      period: "2018 - 2021",
+      title: "Business Analyst (Contract)",
+      company: "DHL Life Sciences and Healthcare Supply Chain, Sydney",
+      period: "May 2021 – Nov 2022",
       description: [
-        "Analyzed market trends and competitive landscape for investment decisions",
-        "Built predictive models for customer churn with 82% accuracy",
-        "Optimized SQL queries reducing report generation time by 60%",
-        "Collaborated with product teams to implement data-driven features"
+        "Coordinated full lifecycle testing, from requirements gathering to execution and reporting.",
+        "Automated reporting via Excel, utilizing Power Query and VBA for efficient data presentation.",
+        "Created Power BI dashboards to visualize data from diverse sources and present key insights.",
+        "Managed and trained a team of 3 in test case execution and data analysis."
       ]
     },
     {
-      title: "Junior Analyst",
-      company: "Retail Insights Group",
-      period: "2016 - 2018",
+      title: "Junior Data Analyst (Internship)",
+      company: "Netball Australia, Victoria",
+      period: "Aug 2020 – Nov 2020",
       description: [
-        "Performed sales analysis and created regular performance reports",
-        "Assisted in developing KPI tracking systems for multiple departments",
-        "Cleaned and preprocessed large datasets for analysis",
-        "Contributed to the development of the company's first customer segmentation model"
+        "Analyzed 1000+ matches using R and Rapid Miner to uncover performance trends and deliver insights.",
+        "Performed extensive data cleansing to ensure data quality and identify anomalies.",
+        "Visualized and presented findings in Tableau, effectively communicating recommendations to stakeholders.",
+        "Provided improvement ideas for data products and supported system/product decisions with analysis."
       ]
     }
   ];
 
   const education = [
     {
-      degree: "Master of Science in Data Analytics",
-      institution: "University of Data Science",
-      period: "2015 - 2016",
-      details: "Specialized in statistical analysis and machine learning. Thesis on predictive modeling of consumer behavior."
+      degree: "Master of Business Analytics",
+      institution: "Deakin University, Melbourne, Australia",
+      period: "",
+      details: ""
     },
     {
-      degree: "Bachelor of Science in Statistics",
-      institution: "State University",
-      period: "2011 - 2015",
-      details: "Minor in Computer Science. Graduated with honors."
+      degree: "Bachelor of Commerce",
+      institution: "Mahatma Gandhi University, Kerala, India",
+      period: "",
+      details: "Major: Finance and Taxation."
     }
   ];
 
   const certifications = [
     {
-      title: "Google Data Analytics Professional Certificate",
-      issuer: "Google",
-      date: "2022"
-    },
-    {
-      title: "Microsoft Certified: Data Analyst Associate",
+      title: "SharePoint Admin Essentials",
       issuer: "Microsoft",
-      date: "2021"
+      date: "2024"
     },
     {
-      title: "Tableau Desktop Specialist",
-      issuer: "Tableau",
+      title: "Power Platform Fundamentals",
+      issuer: "Microsoft",
+      date: "2024"
+    },
+    {
+      title: "Watson Analytics 101",
+      issuer: "IBM",
+      date: "2020"
+    },
+    {
+      title: "Python 101 for Data Science",
+      issuer: "IBM",
       date: "2020"
     }
   ];
@@ -145,12 +151,14 @@ const ResumeSection = () => {
                       <CardTitle>{edu.degree}</CardTitle>
                       <CardDescription>{edu.institution}</CardDescription>
                     </div>
-                    <span className="text-sm text-muted-foreground">{edu.period}</span>
+                    {edu.period && <span className="text-sm text-muted-foreground">{edu.period}</span>}
                   </div>
                 </CardHeader>
-                <CardContent>
-                  <p className="text-muted-foreground">{edu.details}</p>
-                </CardContent>
+                {edu.details && (
+                  <CardContent>
+                    <p className="text-muted-foreground">{edu.details}</p>
+                  </CardContent>
+                )}
               </Card>
             ))}
           </TabsContent>
