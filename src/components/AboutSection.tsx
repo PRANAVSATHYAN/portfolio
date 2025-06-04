@@ -1,4 +1,3 @@
-
 import { Card, CardContent } from "@/components/ui/card";
 import { useEffect } from "react";
 
@@ -28,7 +27,7 @@ const AboutSection = () => {
   ];
   
   return (
-    <section id="about" className="min-h-screen py-24 section-padding bg-secondary relative flex items-center">
+    <section id="about" className="min-h-screen py-24 section-padding gradient-background-secondary relative flex items-center">
       <div className="absolute inset-0 overflow-hidden">
         <div className="grid grid-cols-12 grid-rows-12 h-full w-full opacity-5">
           {[...Array(144)].map((_, i) => (

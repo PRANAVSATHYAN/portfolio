@@ -58,7 +58,7 @@ const HeroSection = () => {
   };
 
   return (
-    <section id="home" className="min-h-screen flex items-center justify-center pt-16 pb-8 section-padding relative overflow-hidden">
+    <section id="home" className="min-h-screen flex items-center justify-center pt-16 pb-8 section-padding relative overflow-hidden gradient-background-primary">
       {/* Background elements */}
       <div className="absolute inset-0">
         <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/20 rounded-full filter blur-[128px] opacity-30"></div>
@@ -88,10 +88,10 @@ const HeroSection = () => {
           </p>
           
           <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-12 fly-up">
-            <Button asChild size="lg" className="rounded-full px-8 py-6 text-lg font-semibold hover:scale-105 transition-all duration-300" style={{backgroundColor: "#cc73f8"}}>
+            <Button asChild size="lg" className="rounded-full px-8 py-6 text-lg font-semibold gradient-button-primary border-0 text-white">
               <a href="https://github.com/PRANAVSATHYAN" target="_blank" rel="noopener noreferrer">View My Work</a>
             </Button>
-            <Button variant="outline" size="lg" className="rounded-full px-8 py-6 text-lg font-semibold hover:scale-105 transition-all duration-300 border-primary text-primary hover:bg-primary hover:text-primary-foreground" onClick={scrollToContact}>
+            <Button variant="outline" size="lg" className="rounded-full px-8 py-6 text-lg font-semibold gradient-button-outline text-primary" onClick={scrollToContact}>
               Get In Touch
             </Button>
           </div>
@@ -100,8 +100,8 @@ const HeroSection = () => {
           <div className="mt-6 fly-up">
             <div className="flex flex-col items-center">
               <p className="text-sm text-muted-foreground mb-3">Scroll to explore</p>
-              <div className="w-6 h-10 border-2 border-muted-foreground rounded-full flex justify-center animate-bounce-slow">
-                <div className="w-1 h-3 bg-muted-foreground rounded-full mt-2 animate-bounce"></div>
+              <div className="w-6 h-10 border-2 border-muted-foreground rounded-full flex justify-center animate-mouse-bounce">
+                <div className="w-1 h-3 bg-muted-foreground rounded-full mt-2"></div>
               </div>
             </div>
           </div>

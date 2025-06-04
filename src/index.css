@@ -48,6 +48,8 @@
 
   body {
     @apply bg-background text-foreground font-sans overflow-x-hidden;
+    background: linear-gradient(180deg, #AA84CF, #8A63A9);
+    min-height: 100vh;
   }
   
   .section-padding {
@@ -69,6 +71,19 @@
   /* Ensure sections take full viewport height where appropriate */
   section {
     scroll-margin-top: 80px;
+  }
+
+  /* Gradient backgrounds for sections */
+  .gradient-background-primary {
+    background: linear-gradient(180deg, rgba(170, 132, 207, 0.1), rgba(138, 99, 169, 0.1));
+  }
+
+  .gradient-background-secondary {
+    background: linear-gradient(180deg, rgba(138, 99, 169, 0.08), rgba(170, 132, 207, 0.08));
+  }
+
+  .gradient-background-tertiary {
+    background: linear-gradient(135deg, rgba(170, 132, 207, 0.05), rgba(138, 99, 169, 0.12));
   }
 }
 
@@ -163,6 +178,26 @@
   animation: bounce-slow 2s infinite;
 }
 
+/* Enhanced mouse bounce animation */
+@keyframes mouse-bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  25% {
+    transform: translateY(-4px);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+  75% {
+    transform: translateY(-4px);
+  }
+}
+
+.animate-mouse-bounce {
+  animation: mouse-bounce 2s ease-in-out infinite;
+}
+
 /* Staggered animation delays for children elements */
 .stagger-children > *:nth-child(1) { animation-delay: 0.1s; }
 .stagger-children > *:nth-child(2) { animation-delay: 0.2s; }
@@ -175,6 +210,31 @@
 .fly-up {
   animation: flyUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
   opacity: 0;
+}
+
+/* Gradient button styles */
+.gradient-button-primary {
+  background: linear-gradient(135deg, #cc73f8, #9b30e2);
+  transition: all 0.3s ease;
+}
+
+.gradient-button-primary:hover {
+  background: linear-gradient(135deg, #d084f9, #a640e3);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(204, 115, 248, 0.4);
+}
+
+.gradient-button-outline {
+  background: linear-gradient(135deg, transparent, transparent);
+  border: 2px solid;
+  border-image: linear-gradient(135deg, #cc73f8, #9b30e2) 1;
+  transition: all 0.3s ease;
+}
+
+.gradient-button-outline:hover {
+  background: linear-gradient(135deg, rgba(204, 115, 248, 0.1), rgba(155, 48, 226, 0.1));
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(204, 115, 248, 0.2);
 }
 
 /* Smooth scrolling improvements */
