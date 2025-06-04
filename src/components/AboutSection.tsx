@@ -1,3 +1,4 @@
+
 import { Card, CardContent } from "@/components/ui/card";
 import { useEffect } from "react";
 
@@ -12,14 +13,14 @@ const AboutSection = () => {
     },
     {
       category: "Data Analysis",
-      items: ["Pandas", "NumPy", "Statistics", "Excel"],
+      items: ["Power BI", "Tableau", "Excel", "IBM SPSS"],
       icon: (
         <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-data-green"><path d="M3 3v18h18"/><path d="m19 9-5 5-4-4-3 3"/></svg>
       )
     },
     {
-      category: "Visualization",
-      items: ["Tableau", "Power BI", "Matplotlib", "Seaborn"],
+      category: "Business Skills",
+      items: ["Requirements Analysis", "Market Research", "Process Mapping", "Stakeholder Management"],
       icon: (
         <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-data-orange"><circle cx="12" cy="12" r="10"/><path d="M16 8h-6.5a2.5 2.5 0 0 0 0 5h3a2.5 2.5 0 0 1 0 5H6"/><path d="M12 3v3"/><path d="M12 21v-3"/></svg>
       )
@@ -69,21 +70,21 @@ const AboutSection = () => {
             <div>
               <h3 className="text-2xl font-bold mb-4 fly-up">My Background</h3>
               <p className="mb-4 text-muted-foreground fly-up leading-relaxed">
-                As a data analyst with 3+ years of experience, I specialize in transforming raw data into meaningful business insights. 
-                My journey in data analysis began with a degree in Statistics, and I've since expanded my expertise across various industries.
+                Experienced Business Analyst with expertise across multiple domains, including Supply Chain, Non-Profit Organization, and finance. 
+                Skilled in requirements gathering, data analysis, market research, and business intelligence tools such as Power BI, Tableau, and Python.
               </p>
               <p className="mb-6 text-muted-foreground fly-up leading-relaxed">
-                I'm passionate about using data to tell stories and drive decision-making. Whether it's optimizing business processes, 
-                identifying market trends, or solving complex problems, I approach each project with curiosity and analytical rigor.
+                Proficient in system automation, stakeholder engagement, process mapping, and managing end-to-end system development and maintenance. 
+                Adept at translating complex data into actionable insights, managing cross-functional projects, and delivering solutions that drive business performance.
               </p>
             </div>
 
             <div>
               <h3 className="text-2xl font-bold mb-4 fly-up">My Interests</h3>
               <p className="text-muted-foreground fly-up leading-relaxed">
-                Beyond working with data, I enjoy exploring new visualization techniques, contributing to open-source data projects, 
-                and staying current with emerging technologies in data science. I believe in the power of data to transform organizations 
-                and create positive change in the world.
+                While my core expertise is in data, I'm a lifelong learner constantly seeking new solutions, delving into the latest technologies and tools, 
+                and staying at the forefront of AI and emerging data science trends. Beyond my professional pursuits, I enjoy staying active with badminton, 
+                exploring new places and cultures through travel, indulging in diverse foods, and unwinding with movies.
               </p>
             </div>
           </div>

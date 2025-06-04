@@ -1,3 +1,4 @@
+
 import { Button } from "@/components/ui/button";
 import { useState, useEffect, useCallback } from "react";
 
@@ -83,16 +84,16 @@ const HeroSection = () => {
           <p className="text-xl mb-6 text-primary font-medium fly-up">An Aspiring Data Analyst</p>
           
           <p className="text-lg mb-8 text-muted-foreground max-w-2xl mx-auto leading-relaxed fly-up">
-            I'm a business analyst and an aspiring data engineer passionate about using data to solve real-world problems. 
-            With expertise in Python, SQL, and visualization tools, I transform complex datasets into actionable insights.
+            Experienced Business Analyst with expertise across multiple domains, including Supply Chain, Non-Profit Organization, finance. 
+            Skilled in requirements gathering, data analysis, and business intelligence tools such as Power BI, Tableau, and Python.
           </p>
           
           <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-12 fly-up">
             <Button asChild size="lg" className="rounded-full px-8 py-6 text-lg font-semibold gradient-button-primary border-0 text-white">
               <a href="https://github.com/PRANAVSATHYAN" target="_blank" rel="noopener noreferrer">View My Work</a>
             </Button>
-            <Button variant="outline" size="lg" className="rounded-full px-8 py-6 text-lg font-semibold gradient-button-outline text-primary" onClick={scrollToContact}>
-              Get In Touch
+            <Button asChild size="lg" className="rounded-full px-8 py-6 text-lg font-semibold gradient-button-primary border-0 text-white" onClick={scrollToContact}>
+              <span style={{ cursor: 'pointer' }} onClick={scrollToContact}>Get In Touch</span>
             </Button>
           </div>
 
