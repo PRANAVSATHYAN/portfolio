@@ -8,6 +8,7 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { Download } from "lucide-react";
 
 const ResumeSection = () => {
   const experience = [
@@ -99,17 +100,8 @@ const ResumeSection = () => {
       
       <div className="container mx-auto relative z-10">
         <div className="mb-16 text-center animate-on-scroll">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 fly-up">Resume</h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 fly-up">Professional Overview</h2>
           <div className="w-24 h-1 bg-primary mx-auto fly-up"></div>
-        </div>
-        
-        <div className="flex justify-center mb-12 animate-on-scroll">
-          <Button asChild size="lg" className="rounded-md fly-up" style={{backgroundColor: "#cc73f8"}}>
-            <a href="./resume.docx" download>
-              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="mr-2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" x2="12" y1="15" y2="3"/></svg>
-              Download Resume
-            </a>
-          </Button>
         </div>
         
         <Tabs defaultValue="experience" className="max-w-4xl mx-auto animate-on-scroll">
@@ -179,6 +171,16 @@ const ResumeSection = () => {
             ))}
           </TabsContent>
         </Tabs>
+        
+        <div className="mt-16 text-center animate-on-scroll">
+          <h3 className="text-xl md:text-2xl font-bold mb-6 fly-up">Want to know more?</h3>
+          <Button asChild size="lg" className="rounded-full px-8 py-6 text-lg font-semibold bg-[#b455fd] hover:bg-[#9b30e2] border-0 text-white fly-up">
+            <a href="./resume.docx" download>
+              <Download className="mr-2" />
+              Download Resume
+            </a>
+          </Button>
+        </div>
       </div>
     </section>
   );
