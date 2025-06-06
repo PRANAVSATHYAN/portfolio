@@ -8,9 +8,11 @@ import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
 import LoadingScreen from "@/components/LoadingScreen";
 import ParticleField from "@/components/ParticleField";
-import { useEffect } from "react";
+import { useState, useEffect } from "react";
 
 const Index = () => {
+  const [activeSection, setActiveSection] = useState('home');
+
   // Enhanced animation on scroll with bottom-to-top effect
   useEffect(() => {
     const observerOptions = {
@@ -37,17 +39,32 @@ const Index = () => {
     };
   }, []);
 
+  const renderCurrentSection = () => {
+    switch (activeSection) {
+      case 'home':
+        return <HeroSection />;
+      case 'about':
+        return <AboutSection />;
+      case 'resume':
+        return <ResumeSection />;
+      case 'portfolio':
+        return <PortfolioSection />;
+      case 'contact':
+        return <ContactSection />;
+      default:
+        return <HeroSection />;
+    }
+  };
+
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background overflow-hidden">
       <ParticleField />
       <LoadingScreen />
-      <Navbar />
-      <HeroSection />
-      <AboutSection />
-      <ResumeSection />
-      <PortfolioSection />
-      <ContactSection />
-      <Footer />
+      <Navbar activeSection={activeSection} setActiveSection={setActiveSection} />
+      <div className="h-screen">
+        {renderCurrentSection()}
+      </div>
+      {activeSection === 'contact' && <Footer />}
     </div>
   );
 };

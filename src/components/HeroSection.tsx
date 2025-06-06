@@ -2,7 +2,11 @@
 import { Button } from "@/components/ui/button";
 import { useState, useEffect, useCallback } from "react";
 
-const HeroSection = () => {
+interface HeroSectionProps {
+  onContactClick?: () => void;
+}
+
+const HeroSection = ({ onContactClick }: HeroSectionProps) => {
   const [jobTitle, setJobTitle] = useState("");
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
@@ -48,13 +52,9 @@ const HeroSection = () => {
     });
   }, []);
 
-  const scrollToContact = () => {
-    const contactSection = document.getElementById('contact');
-    if (contactSection) {
-      contactSection.scrollIntoView({ 
-        behavior: 'smooth',
-        block: 'start'
-      });
+  const handleContactClick = () => {
+    if (onContactClick) {
+      onContactClick();
     }
   };
 
@@ -96,7 +96,7 @@ const HeroSection = () => {
               size="lg" 
               variant="ghost"
               className="rounded-full px-8 py-6 text-lg font-semibold border-2 border-primary text-primary hover:bg-primary/10 transition-all duration-300" 
-              onClick={scrollToContact}
+              onClick={handleContactClick}
             >
               Get In Touch
             </Button>
@@ -105,7 +105,7 @@ const HeroSection = () => {
           {/* Enhanced scroll indicator with more noticeable bounce */}
           <div className="mt-6 fly-up">
             <div className="flex flex-col items-center">
-              <p className="text-sm text-muted-foreground mb-3">Scroll to explore</p>
+              <p className="text-sm text-muted-foreground mb-3">Navigate via menu</p>
               <div className="w-6 h-10 border-2 border-muted-foreground rounded-full flex justify-center animate-mouse-bounce">
                 <div className="w-1 h-3 bg-muted-foreground rounded-full mt-2"></div>
               </div>
