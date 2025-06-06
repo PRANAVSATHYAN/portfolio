@@ -1,4 +1,3 @@
-
 import { Badge } from "@/components/ui/badge";
 import { 
   Database, 
@@ -11,7 +10,11 @@ import {
   Zap
 } from "lucide-react";
 
-const AboutSection = () => {
+interface AboutSectionProps {
+  className?: string;
+}
+
+const AboutSection = ({ className = "" }: AboutSectionProps) => {
   const techStack = [
     { name: "Python", icon: "🐍", category: "Programming" },
     { name: "R Studio", icon: "📊", category: "Analytics" },
@@ -32,7 +35,7 @@ const AboutSection = () => {
   ];
 
   return (
-    <section id="about" className="py-24 section-padding relative gradient-background-secondary">
+    <section id="about" className={`py-24 section-padding relative gradient-background-secondary ${className}`}>
       {/* Background elements */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="grid grid-cols-12 grid-rows-12 h-full w-full opacity-5">

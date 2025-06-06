@@ -18,6 +18,10 @@ import {
   DialogTrigger,
 } from "@/components/ui/dialog";
 
+interface PortfolioSectionProps {
+  className?: string;
+}
+
 interface Project {
   id: number;
   title: string;
@@ -29,7 +33,7 @@ interface Project {
   link: string;
 }
 
-const PortfolioSection = () => {
+const PortfolioSection = ({ className = "" }: PortfolioSectionProps) => {
   const projects: Project[] = [
     {
       id: 1,
@@ -76,7 +80,7 @@ const PortfolioSection = () => {
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
 
   return (
-    <section id="portfolio" className="py-24 section-padding relative">
+    <section id="portfolio" className={`py-24 section-padding relative ${className}`}>
       <div className="absolute inset-0 overflow-hidden">
         <div className="grid grid-cols-12 grid-rows-12 h-full w-full opacity-5">
           {[...Array(144)].map((_, i) => (

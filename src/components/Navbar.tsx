@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState('home');
   
   useEffect(() => {
     const handleScroll = () => {
@@ -14,6 +15,20 @@ const Navbar = () => {
       } else {
         setIsScrolled(false);
       }
+      
+      // Detect which section is currently in view
+      const sections = document.querySelectorAll('section[id]');
+      const scrollPosition = window.scrollY + 100; // Offset for better detection
+      
+      sections.forEach(section => {
+        const sectionTop = (section as HTMLElement).offsetTop;
+        const sectionHeight = section.clientHeight;
+        const sectionId = section.getAttribute('id') || '';
+        
+        if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+          setActiveSection(sectionId);
+        }
+      });
     };
 
     window.addEventListener('scroll', handleScroll);
@@ -23,12 +38,8 @@ const Navbar = () => {
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
-      const headerOffset = 100;
-      const elementPosition = element.getBoundingClientRect().top;
-      const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-
       window.scrollTo({
-        top: offsetPosition,
+        top: element.offsetTop,
         behavior: 'smooth'
       });
     }
@@ -77,10 +88,14 @@ const Navbar = () => {
             <li key={item.title}>
               <button 
                 onClick={() => scrollToSection(item.id)}
-                className="transition-all duration-300 hover:text-primary text-foreground font-medium cursor-pointer hover:scale-105 relative group"
+                className={`transition-all duration-300 font-medium cursor-pointer hover:scale-105 relative group ${
+                  activeSection === item.id ? 'text-primary' : 'text-foreground hover:text-primary'
+                }`}
               >
                 {item.title}
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
+                <span className={`absolute -bottom-1 left-0 h-0.5 bg-primary transition-all duration-300 ${
+                  activeSection === item.id ? 'w-full' : 'w-0 group-hover:w-full'
+                }`}></span>
               </button>
             </li>
           ))}
@@ -95,7 +110,9 @@ const Navbar = () => {
               <li key={item.title} className="block px-6 py-2">
                 <button 
                   onClick={() => scrollToSection(item.id)}
-                  className="block text-foreground hover:text-primary w-full text-left transition-colors duration-200"
+                  className={`block w-full text-left transition-colors duration-200 ${
+                    activeSection === item.id ? 'text-primary' : 'text-foreground hover:text-primary'
+                  }`}
                 >
                   {item.title}
                 </button>

@@ -42,12 +42,14 @@ const Index = () => {
       <ParticleField />
       <LoadingScreen />
       <Navbar />
-      <HeroSection />
-      <AboutSection />
-      <ResumeSection />
-      <PortfolioSection />
-      <ContactSection />
-      <Footer />
+      <div className="scroll-container">
+        <HeroSection className="snap-section" />
+        <AboutSection className="snap-section" />
+        <ResumeSection className="snap-section" />
+        <PortfolioSection className="snap-section" />
+        <ContactSection className="snap-section" />
+        <Footer />
+      </div>
     </div>
   );
 };
