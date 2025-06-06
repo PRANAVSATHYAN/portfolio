@@ -1,5 +1,4 @@
 
-import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { 
   Database, 
@@ -31,16 +30,6 @@ const AboutSection = () => {
     { name: "SPSS", icon: "📈", category: "Statistics" },
     { name: "Rapid Miner", icon: "⛏️", category: "Mining" }
   ];
-
-  const scrollToResume = () => {
-    const resumeSection = document.getElementById('resume');
-    if (resumeSection) {
-      resumeSection.scrollIntoView({ 
-        behavior: 'smooth',
-        block: 'start'
-      });
-    }
-  };
 
   return (
     <section id="about" className="py-24 section-padding relative gradient-background-secondary">
@@ -144,16 +133,6 @@ const AboutSection = () => {
                 ))}
               </div>
             </div>
-          </div>
-
-          <div className="text-center fly-up">
-            <Button 
-              size="lg" 
-              onClick={scrollToResume}
-              className="rounded-full px-8 py-6 text-lg font-semibold gradient-button-primary border-0 text-white"
-            >
-              View My Resume
-            </Button>
           </div>
         </div>
       </div>

@@ -1,3 +1,4 @@
+
 import { useState, useEffect } from 'react';
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
@@ -37,7 +38,7 @@ const Navbar = () => {
   const menuItems = [
     { title: 'Home', id: 'home' },
     { title: 'About', id: 'about' },
-    { title: 'Resume', id: 'resume' },
+    { title: 'Overview', id: 'resume' },
     { title: 'Portfolio', id: 'portfolio' },
     { title: 'Contact', id: 'contact' }
   ];
@@ -46,8 +47,8 @@ const Navbar = () => {
     <nav 
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled 
-          ? 'bg-background/30 backdrop-blur-md shadow-md py-3 mx-6 md:mx-12 lg:mx-24 mt-2 rounded-full' 
-          : 'bg-transparent py-4 mx-6 md:mx-12 lg:mx-24 mt-2 rounded-full'
+          ? 'bg-background/30 backdrop-blur-md shadow-md py-3 mx-0 rounded-none' 
+          : 'bg-transparent py-4 mx-0 rounded-none'
       }`}
     >
       <div className="container mx-auto px-6 flex justify-between items-center">
