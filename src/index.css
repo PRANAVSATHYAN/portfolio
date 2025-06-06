@@ -44,26 +44,12 @@
 
   html {
     scroll-behavior: smooth;
-    scroll-snap-type: y mandatory;
-    overflow-y: scroll;
-    height: 100%;
   }
 
   body {
     @apply bg-background text-foreground font-sans overflow-x-hidden;
     background: linear-gradient(180deg, #AA84CF, #8A63A9);
     min-height: 100vh;
-    height: 100%;
-  }
-  
-  /* Snap scrolling for main sections */
-  section.snap-section {
-    scroll-snap-align: start;
-    scroll-snap-stop: always;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
   }
   
   .section-padding {

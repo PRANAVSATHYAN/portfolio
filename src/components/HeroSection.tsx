@@ -1,11 +1,8 @@
+
 import { Button } from "@/components/ui/button";
 import { useState, useEffect, useCallback } from "react";
 
-interface HeroSectionProps {
-  className?: string;
-}
-
-const HeroSection = ({ className = "" }: HeroSectionProps) => {
+const HeroSection = () => {
   const [jobTitle, setJobTitle] = useState("");
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
@@ -62,7 +59,7 @@ const HeroSection = ({ className = "" }: HeroSectionProps) => {
   };
 
   return (
-    <section id="home" className={`min-h-screen flex items-center justify-center pt-16 pb-8 section-padding relative overflow-hidden gradient-background-primary ${className}`}>
+    <section id="home" className="min-h-screen flex items-center justify-center pt-16 pb-8 section-padding relative overflow-hidden gradient-background-primary">
       {/* Background elements */}
       <div className="absolute inset-0">
         <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/20 rounded-full filter blur-[128px] opacity-30"></div>

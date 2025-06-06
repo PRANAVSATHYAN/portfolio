@@ -1,3 +1,4 @@
+
 import { Button } from "@/components/ui/button";
 import {
   Card,
@@ -9,11 +10,7 @@ import {
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Download } from "lucide-react";
 
-interface ResumeSectionProps {
-  className?: string;
-}
-
-const ResumeSection = ({ className = "" }: ResumeSectionProps) => {
+const ResumeSection = () => {
   const experience = [
     {
       title: "Business Analyst (Solutions Design and Delivery)",
@@ -89,7 +86,7 @@ const ResumeSection = ({ className = "" }: ResumeSectionProps) => {
   ];
 
   return (
-    <section id="resume" className={`py-24 section-padding bg-secondary relative ${className}`}>
+    <section id="resume" className="py-24 section-padding bg-secondary relative">
       <div className="absolute inset-0 overflow-hidden">
         <div className="grid grid-cols-12 grid-rows-12 h-full w-full opacity-5">
           {[...Array(144)].map((_, i) => (

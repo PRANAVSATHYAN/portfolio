@@ -1,12 +1,9 @@
+
 import { Card } from "@/components/ui/card";
 
-interface ContactSectionProps {
-  className?: string;
-}
-
-const ContactSection = ({ className = "" }: ContactSectionProps) => {
+const ContactSection = () => {
   return (
-    <section id="contact" className={`py-24 section-padding gradient-background-tertiary relative ${className}`}>
+    <section id="contact" className="py-24 section-padding gradient-background-tertiary relative">
       <div className="absolute inset-0 overflow-hidden">
         <div className="grid grid-cols-12 grid-rows-12 h-full w-full opacity-5">
           {[...Array(144)].map((_, i) => (
