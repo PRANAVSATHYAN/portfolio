@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 import {
   Card,
@@ -76,7 +77,7 @@ const PortfolioSection = () => {
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
 
   return (
-    <section id="portfolio" className="py-24 section-padding relative">
+    <section className="h-screen overflow-y-auto section-padding relative">
       <div className="absolute inset-0 overflow-hidden">
         <div className="grid grid-cols-12 grid-rows-12 h-full w-full opacity-5">
           {[...Array(144)].map((_, i) => (
@@ -88,7 +89,7 @@ const PortfolioSection = () => {
         <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-[#9b30e2] rounded-full filter blur-[150px] opacity-10"></div>
       </div>
       
-      <div className="container mx-auto relative z-10">
+      <div className="container mx-auto relative z-10 py-24">
         <div className="mb-16 text-center animate-on-scroll">
           <h2 className="text-3xl md:text-4xl font-bold mb-4 fly-up">Portfolio</h2>
           <p className="text-muted-foreground max-w-2xl mx-auto fly-up">

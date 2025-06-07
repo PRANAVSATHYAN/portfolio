@@ -3,7 +3,7 @@ import { Card } from "@/components/ui/card";
 
 const ContactSection = () => {
   return (
-    <section id="contact" className="py-24 section-padding gradient-background-tertiary relative">
+    <section className="h-screen overflow-y-auto section-padding gradient-background-tertiary relative">
       <div className="absolute inset-0 overflow-hidden">
         <div className="grid grid-cols-12 grid-rows-12 h-full w-full opacity-5">
           {[...Array(144)].map((_, i) => (
@@ -15,7 +15,7 @@ const ContactSection = () => {
         <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-[#9b30e2] rounded-full filter blur-[150px] opacity-10"></div>
       </div>
       
-      <div className="container mx-auto relative z-10">
+      <div className="container mx-auto relative z-10 py-24">
         <div className="mb-16 text-center animate-on-scroll">
           <h2 className="text-3xl md:text-4xl font-bold mb-4 fly-up">Get In Touch</h2>
           <p className="text-muted-foreground max-w-2xl mx-auto fly-up">

@@ -2,7 +2,11 @@
 import { Button } from "@/components/ui/button";
 import { useState, useEffect, useCallback } from "react";
 
-const HeroSection = () => {
+interface HeroSectionProps {
+  onContactClick?: () => void;
+}
+
+const HeroSection = ({ onContactClick }: HeroSectionProps) => {
   const [jobTitle, setJobTitle] = useState("");
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
@@ -48,18 +52,14 @@ const HeroSection = () => {
     });
   }, []);
 
-  const scrollToContact = () => {
-    const contactSection = document.getElementById('contact');
-    if (contactSection) {
-      contactSection.scrollIntoView({ 
-        behavior: 'smooth',
-        block: 'start'
-      });
+  const handleContactClick = () => {
+    if (onContactClick) {
+      onContactClick();
     }
   };
 
   return (
-    <section id="home" className="min-h-screen flex items-center justify-center pt-16 pb-8 section-padding relative overflow-hidden gradient-background-primary">
+    <section className="h-screen flex items-center justify-center section-padding relative overflow-hidden gradient-background-primary">
       {/* Background elements */}
       <div className="absolute inset-0">
         <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/20 rounded-full filter blur-[128px] opacity-30"></div>
@@ -96,7 +96,7 @@ const HeroSection = () => {
               size="lg" 
               variant="ghost"
               className="rounded-full px-8 py-6 text-lg font-semibold border-2 border-primary text-primary hover:bg-primary/10 transition-all duration-300" 
-              onClick={scrollToContact}
+              onClick={handleContactClick}
             >
               Get In Touch
             </Button>
@@ -105,7 +105,7 @@ const HeroSection = () => {
           {/* Enhanced scroll indicator with more noticeable bounce */}
           <div className="mt-6 fly-up">
             <div className="flex flex-col items-center">
-              <p className="text-sm text-muted-foreground mb-3">Scroll to explore</p>
+              <p className="text-sm text-muted-foreground mb-3">Navigate with menu</p>
               <div className="w-6 h-10 border-2 border-muted-foreground rounded-full flex justify-center animate-mouse-bounce">
                 <div className="w-1 h-3 bg-muted-foreground rounded-full mt-2"></div>
               </div>
