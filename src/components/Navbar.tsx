@@ -3,12 +3,7 @@ import { useState, useEffect } from 'react';
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 
-interface NavbarProps {
-  activeSection: string;
-  setActiveSection: (section: string) => void;
-}
-
-const Navbar = ({ activeSection, setActiveSection }: NavbarProps) => {
+const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   
@@ -25,8 +20,18 @@ const Navbar = ({ activeSection, setActiveSection }: NavbarProps) => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const handleSectionChange = (sectionId: string) => {
-    setActiveSection(sectionId);
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      const headerOffset = 100;
+      const elementPosition = element.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      });
+    }
     setIsMobileMenuOpen(false);
   };
 
@@ -71,15 +76,11 @@ const Navbar = ({ activeSection, setActiveSection }: NavbarProps) => {
           {menuItems.map((item) => (
             <li key={item.title}>
               <button 
-                onClick={() => handleSectionChange(item.id)}
-                className={`transition-all duration-300 font-medium cursor-pointer hover:scale-105 relative group ${
-                  activeSection === item.id ? 'text-primary' : 'text-foreground hover:text-primary'
-                }`}
+                onClick={() => scrollToSection(item.id)}
+                className="transition-all duration-300 hover:text-primary text-foreground font-medium cursor-pointer hover:scale-105 relative group"
               >
                 {item.title}
-                <span className={`absolute -bottom-1 left-0 h-0.5 bg-primary transition-all duration-300 ${
-                  activeSection === item.id ? 'w-full' : 'w-0 group-hover:w-full'
-                }`}></span>
+                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
               </button>
             </li>
           ))}
@@ -93,10 +94,8 @@ const Navbar = ({ activeSection, setActiveSection }: NavbarProps) => {
             {menuItems.map((item) => (
               <li key={item.title} className="block px-6 py-2">
                 <button 
-                  onClick={() => handleSectionChange(item.id)}
-                  className={`block w-full text-left transition-colors duration-200 ${
-                    activeSection === item.id ? 'text-primary' : 'text-foreground hover:text-primary'
-                  }`}
+                  onClick={() => scrollToSection(item.id)}
+                  className="block text-foreground hover:text-primary w-full text-left transition-colors duration-200"
                 >
                   {item.title}
                 </button>
