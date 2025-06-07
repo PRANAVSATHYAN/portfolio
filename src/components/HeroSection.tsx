@@ -59,7 +59,7 @@ const HeroSection = ({ onContactClick }: HeroSectionProps) => {
   };
 
   return (
-    <section className="h-screen flex items-center justify-center section-padding relative overflow-hidden gradient-background-primary">
+    <section id="home" className="min-h-screen flex items-center justify-center pt-16 pb-8 section-padding relative overflow-hidden gradient-background-primary">
       {/* Background elements */}
       <div className="absolute inset-0">
         <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/20 rounded-full filter blur-[128px] opacity-30"></div>
@@ -105,7 +105,7 @@ const HeroSection = ({ onContactClick }: HeroSectionProps) => {
           {/* Enhanced scroll indicator with more noticeable bounce */}
           <div className="mt-6 fly-up">
             <div className="flex flex-col items-center">
-              <p className="text-sm text-muted-foreground mb-3">Navigate with menu</p>
+              <p className="text-sm text-muted-foreground mb-3">Navigate via menu</p>
               <div className="w-6 h-10 border-2 border-muted-foreground rounded-full flex justify-center animate-mouse-bounce">
                 <div className="w-1 h-3 bg-muted-foreground rounded-full mt-2"></div>
               </div>

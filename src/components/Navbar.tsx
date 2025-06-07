@@ -25,7 +25,7 @@ const Navbar = ({ activeSection, setActiveSection }: NavbarProps) => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const handleSectionClick = (sectionId: string) => {
+  const handleSectionChange = (sectionId: string) => {
     setActiveSection(sectionId);
     setIsMobileMenuOpen(false);
   };
@@ -71,7 +71,7 @@ const Navbar = ({ activeSection, setActiveSection }: NavbarProps) => {
           {menuItems.map((item) => (
             <li key={item.title}>
               <button 
-                onClick={() => handleSectionClick(item.id)}
+                onClick={() => handleSectionChange(item.id)}
                 className={`transition-all duration-300 font-medium cursor-pointer hover:scale-105 relative group ${
                   activeSection === item.id ? 'text-primary' : 'text-foreground hover:text-primary'
                 }`}
@@ -93,7 +93,7 @@ const Navbar = ({ activeSection, setActiveSection }: NavbarProps) => {
             {menuItems.map((item) => (
               <li key={item.title} className="block px-6 py-2">
                 <button 
-                  onClick={() => handleSectionClick(item.id)}
+                  onClick={() => handleSectionChange(item.id)}
                   className={`block w-full text-left transition-colors duration-200 ${
                     activeSection === item.id ? 'text-primary' : 'text-foreground hover:text-primary'
                   }`}

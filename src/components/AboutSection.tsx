@@ -32,7 +32,7 @@ const AboutSection = () => {
   ];
 
   return (
-    <section className="h-screen overflow-y-auto section-padding relative gradient-background-secondary">
+    <section id="about" className="py-24 section-padding relative gradient-background-secondary">
       {/* Background elements */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="grid grid-cols-12 grid-rows-12 h-full w-full opacity-5">
@@ -44,7 +44,7 @@ const AboutSection = () => {
         <div className="absolute bottom-1/3 right-1/4 w-64 h-64 bg-primary/20 rounded-full filter blur-[100px] opacity-25"></div>
       </div>
       
-      <div className="container mx-auto relative z-10 py-24">
+      <div className="container mx-auto relative z-10">
         <div className="mb-16 text-center animate-on-scroll">
           <h2 className="text-3xl md:text-4xl font-bold mb-4 fly-up">About Me</h2>
           <p className="text-muted-foreground max-w-2xl mx-auto fly-up">
