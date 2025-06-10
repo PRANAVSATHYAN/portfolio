@@ -175,7 +175,7 @@ const ResumeSection = () => {
         <div className="mt-16 text-center animate-on-scroll">
           <h3 className="text-xl md:text-2xl font-bold mb-6 fly-up">Want to know more?</h3>
           <Button asChild size="lg" className="rounded-full px-8 py-6 text-lg font-semibold bg-[#b455fd] hover:bg-[#9b30e2] border-0 text-white fly-up">
-            <a href="./resume.docx" download>
+            <a href="./resume.pdf" download>
               <Download className="mr-2" />
               Download Resume
             </a>
